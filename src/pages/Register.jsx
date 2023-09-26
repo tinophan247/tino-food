@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
+import Pagelayout from "../components/Pagelayout";
 
 function Register() {
   return (
+    <Pagelayout>
       <div className="flex flex-wrap min-h-screen w-full content-center justify-center bg-gray-200 py-10">
         <div className="w-full xl:w-3/4 lg:w-11/12 flex">
-          <div
-            className="w-full h-auto bg-gray-400 hidden lg:block lg:w-5/12 bg-cover rounded-l-lg bg-[url('https://e0.pxfuel.com/wallpapers/527/704/desktop-wallpaper-pizza-cooking.jpg')]"
-          />
+          <div className="w-full h-auto bg-gray-400 hidden lg:block lg:w-5/12 bg-cover rounded-l-lg bg-[url('https://e0.pxfuel.com/wallpapers/527/704/desktop-wallpaper-pizza-cooking.jpg')]" />
           <div className="w-full lg:w-7/12 bg-white p-5 rounded-lg lg:rounded-l-none">
             <h3 className="pt-4 text-2xl text-center">Create an Account!</h3>
             <form className="px-8 pt-6 pb-8 mb-4 bg-white rounded">
@@ -104,7 +104,7 @@ function Register() {
               <div className="text-center">
                 <Link
                   className="inline-block text-sm text-blue-500 align-baseline hover:text-blue-800"
-                  to='/login'
+                  to="/login"
                 >
                   Already have an account? Login!
                 </Link>
@@ -113,6 +113,7 @@ function Register() {
           </div>
         </div>
       </div>
+    </Pagelayout>
   );
 }
 

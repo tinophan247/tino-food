@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
+import Pagelayout from "../components/Pagelayout";
 
 function Login() {
   return (
-    <div>
+    <Pagelayout>
       <div className="flex flex-wrap min-h-screen w-full content-center justify-center bg-gray-200 py-10">
         <div className="flex shadow-md">
           <div
@@ -85,7 +86,7 @@ function Login() {
           </div>
         </div>
       </div>
-    </div>
+    </Pagelayout>
   );
 }
 

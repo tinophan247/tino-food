@@ -1,14 +1,13 @@
 import Carousel from "../components/Carousel";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
+import HomeProduct from "../components/HomeProduct";
+import Pagelayout from "../components/Pagelayout";
 
 function HomePage() {
   return (
-    <div>
-      <Header />
+    <Pagelayout>
       <Carousel />
-      <Footer />
-    </div>
+      <HomeProduct/>
+    </Pagelayout>
   );
 }
 
