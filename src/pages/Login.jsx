@@ -1,7 +1,30 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Pagelayout from "../components/Pagelayout";
+import TextFields from "../components/TextField/TextField";
+import Check from "../components/Checkbox/Checkbox";
+import * as yup from "yup";
+import { useFormik } from "formik";
 
 function Login() {
+  const navigate =useNavigate();
+  const validationSchema = yup.object({
+    email: yup.string().required("Chưa nhập email").email('Chưa nhập đúng định dạng email'),
+    password: yup.string().required("Chưa nhập password"),
+  });
+
+  const formik = useFormik({
+    initialValues: {
+      email: "",
+      password: "",
+    },
+    validationSchema: validationSchema,
+    onSubmit: (values) => {
+      alert('Đăng nhập thành công');
+      navigate('/')
+      console.log(values)
+    },
+  });
+
   return (
     <Pagelayout>
       <div className="flex flex-wrap min-h-screen w-full content-center justify-center bg-gray-200 py-10">
@@ -11,49 +34,51 @@ function Login() {
             style={{ width: "24rem", height: "32rem" }}
           >
             <div className="w-72">
-              <h1 className="text-xl font-semibold">Welcome back</h1>
-              <small className="text-gray-400">
-                Welcome back! Please enter your details
-              </small>
-              <form className="mt-4">
-                <div className="mb-3">
-                  <label className="mb-2 block text-xs font-semibold">
-                    Email
-                  </label>
-                  <input
+              <h1 className="text-xl font-semibold">
+                Welcome back to Tino Food
+              </h1>
+              <form onSubmit={formik.handleSubmit} className="mt-4">
+                <div className="mb-5">
+                  <TextFields
+                    name="Email"
                     type="email"
-                    placeholder="Enter your email"
-                    className="block w-full rounded-md border border-gray-300 focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-1.5 text-gray-500"
+                    value={formik.values.email}
+                    onChange={formik.handleChange("email")}
+                    required={true}
+                    helperText={formik.touched.email && formik.errors.email}
+                    error={formik.touched.email && Boolean(formik.errors.email) }
+                    width="299px"
                   />
                 </div>
-                <div className="mb-3">
-                  <label className="mb-2 block text-xs font-semibold">
-                    Password
-                  </label>
-                  <input
+                <div className="mb-5">
+                  <TextFields
+                    name="Password"
                     type="password"
-                    placeholder="*****"
-                    className="block w-full rounded-md border border-gray-300 focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-1.5 text-gray-500"
+                    value={formik.values.password}
+                    onChange={formik.handleChange("password")}
+                    required={true}
+                    helperText={formik.touched.password && formik.errors.password}
+                    error={formik.touched.password && Boolean(formik.errors.password)}
+                    width="299px"
                   />
                 </div>
-                <div className="mb-3 flex flex-wrap content-center">
-                  <input
-                    id="remember"
-                    type="checkbox"
-                    className="mr-1 checked:bg-purple-700"
-                  />
+                <div className="mb-3 flex flex-wrap content-center items-center">
+                  <Check />
                   <label
                     htmlFor="remember"
                     className="mr-auto text-xs font-semibold"
                   >
-                    Remember for 30 days
+                    Remember
                   </label>
                   <a href="#" className="text-xs font-semibold text-purple-700">
                     Forgot password?
                   </a>
                 </div>
                 <div className="mb-3">
-                  <button className="mb-1.5 block w-full text-center text-white bg-purple-700 hover:bg-purple-900 px-2 py-1.5 rounded-md">
+                  <button
+                    type="submit"
+                    className="mb-1.5 block w-full text-center text-white bg-purple-700 hover:bg-purple-900 px-2 py-1.5 rounded-md"
+                  >
                     Sign in
                   </button>
                   <button className="flex flex-wrap justify-center w-full border border-gray-300 hover:border-gray-500 px-2 py-1.5 rounded-md">
@@ -69,7 +94,10 @@ function Login() {
                 <span className="text-xs text-gray-400 font-semibold">
                   Dont have account?
                 </span>
-                <Link to='/register' className="text-xs font-semibold text-purple-700">
+                <Link
+                  to="/register"
+                  className="text-xs font-semibold text-purple-700"
+                >
                   Sign up
                 </Link>
               </div>
