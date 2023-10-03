@@ -10,19 +10,149 @@
     },
     {
       "id": "2",
-      "fullname": "test",
+      "fullname": "yaoyao2",
       "email": "test@gmail.com",
       "phoneNumber": "0987567789",
-      "password": "123",
+      "password": "123345",
       "isAdmin": false
     },
     {
-      "id": "3",
-      "fullname": "Hồ Khôi",
-      "email": "khoi@gmail.com",
-      "phoneNumber": "0987777888",
-      "password": "234",
+      "id": 5407,
+      "fullname": "test",
+      "email": "test@gmail.com",
+      "phoneNumber": "0987987987",
+      "password": "123",
       "isAdmin": false
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "img": "https://img.dominos.vn/Pizza+Seoul+vien+khoai+lang+-+TIENG+ANH.jpg",
+      "name": "PIZZA SEOUL BÒ XÀO BULGOGI VIỀN KHOAI LANG PHÔ MAI - SEOUL BEEF BULGOGI CHEESY SWEET POTATO CRUST",
+      "price": 35,
+      "size": "Medium",
+      "category": "favor"
+    },
+    {
+      "id": 2,
+      "img": "https://img.dominos.vn/Pizza+Seoul+ko+vien+-+TIENG+ANH.jpg",
+      "name": "PIZZA SEOUL BÒ XÀO BULGOGI - SEOUL BEEF BULGOGI",
+      "price": 35,
+      "size": "Medium",
+      "category": "favor"
+    },
+    {
+      "id": 3,
+      "img": "https://img.dominos.vn/Menu+BG+1.jpg",
+      "name": "PIZZA BÒ BEEFSTEAK PHÔ MAI KIỂU NEW YORK - NEW YORK CHEESESTEAK",
+      "price": 35,
+      "size": "Medium",
+      "category": "favor"
+    },
+    {
+      "id": 4,
+      "img": "https://img.dominos.vn/Surf-turf-Pizza-Bo-Tom-Nuong-Kieu-My-1.jpg",
+      "name": "PIZZA BÒ & TÔM NƯỚNG KIỂU MỸ - SURF & TURF",
+      "price": 35,
+      "size": "Medium",
+      "category": "seafood"
+    },
+    {
+      "id": 5,
+      "img": "https://img.dominos.vn/Pizza-Hai-San-Xot-Mayonnaise-Ocean-Mania.jpg",
+      "name": "PIZZA HẢI SẢN XỐT MAYONNAISE - OCEAN MANIA",
+      "price": 35,
+      "size": "Medium",
+      "category": "seafood"
+    },
+    {
+      "id": 6,
+      "img": "https://img.dominos.vn/Pizzaminsea-Hai-San-Nhiet-Doi-Xot-Tieu.jpg",
+      "name": "PIZZA HẢI SẢN NHIỆT ĐỚI XỐT TIÊU - PIZZAMIN SEA",
+      "price": 35,
+      "size": "Medium",
+      "category": "seafood"
+    },
+    {
+      "id": 7,
+      "img": "https://img.dominos.vn/Sausage-Kid-Mania-1.jpg",
+      "name": "PIZZA XÚC XÍCH XỐT PHÔ MAI - SAUSAGE KID MANIA",
+      "price": 35,
+      "size": "Medium",
+      "category": "seafood"
+    },
+    {
+      "id": 41,
+      "img": "https://img.dominos.vn/coke-390.jpg",
+      "name": "Chai Coca-Cola 390ml",
+      "price": 1.01,
+      "size": "Small",
+      "category": "drinks"
+    },
+    {
+      "id": 42,
+      "img": "https://img.dominos.vn/fanta-390.jpg",
+      "name": "Chai Fanta 390ml",
+      "price": 1.01,
+      "size": "Small",
+      "category": "drinks"
+    },
+    {
+      "id": 43,
+      "img": "https://img.dominos.vn/Sprite-390.jpg",
+      "name": "Chai Sprite 390ml",
+      "price": 1.01,
+      "size": "Small",
+      "category": "drinks"
+    },
+    {
+      "id": 44,
+      "img": "https://img.dominos.vn/coke-zero.jpg",
+      "name": "COCA-COLA ZERO CAN 320ML",
+      "price": 1.01,
+      "size": "Small",
+      "category": "drinks"
+    },
+    {
+      "id": 45,
+      "img": "https://img.dominos.vn/coke-1.5.jpg",
+      "name": "COCA-COLA BOTTLE 1.5L",
+      "price": 1.58,
+      "size": "Large",
+      "category": "drinks"
+    },
+    {
+      "id": 46,
+      "img": "https://img.dominos.vn/Sprite-1.5L.jpg",
+      "name": "SPRITE BOTTLE 1.5L",
+      "price": 1.58,
+      "size": "Large",
+      "category": "drinks"
+    },
+    {
+      "id": 47,
+      "img": "https://img.dominos.vn/fanta-1.5.jpg",
+      "name": "FANTA BOTTLE 1.5L",
+      "price": 1.58,
+      "size": "Large",
+      "category": "drinks"
+    },
+    {
+      "id": 48,
+      "img": "https://img.dominos.vn/daisani.jpg",
+      "name": "DASANI SPRING WATER 510ML",
+      "price": 1.01,
+      "size": "Small",
+      "category": "drinks"
+    },
+    {
+      "id": 49,
+      "img": "https://img.dominos.vn/dasani-pc-new.png",
+      "name": "DASANI SPRING WATER 1.5L",
+      "price": 1.58,
+      "size": "Large",
+      "category": "drinks"
     }
   ]
 }

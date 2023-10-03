@@ -1,17 +1,17 @@
 /* eslint-disable react/prop-types */
 function ProductItem({item}) {
   return (
-    <div className="relative hover:shadow-xl cursor-pointer rounded-lg">
+    <div className="relative hover:shadow-xl hover:bg-white cursor-pointer rounded-lg">
       <div className="w-full overflow-hidden rounded-md bg-gray-200 lg:h-80">
         <img
           src={item.img}
-          alt="Front of men's Basic Tee in black."
+          alt="Not found"
           className="h-full w-full object-cover object-center lg:h-full lg:w-full "
         />
       </div>
       <div className="py-2 px-4">
         <div>
-          <h3 className="text-sm text-gray-5       00 font-medium">
+          <h3 className="text-sm text-gray-500 font-medium">
               {item.name}
           </h3>
         </div>
