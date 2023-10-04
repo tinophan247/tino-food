@@ -2,26 +2,26 @@
   "users": [
     {
       "id": 1,
-      "fullname": "Marathon Guest",
+      "firstname": "Marathon",
+      "lastName": "Guest",
       "email": "marathonguest@gmmail.com",
       "password": "123",
-      "phoneNumber": "0987654321",
-      "isAdmin": true
-    },
-    {
-      "id": "2",
-      "fullname": "yaoyao2",
-      "email": "test@gmail.com",
-      "phoneNumber": "0987567789",
-      "password": "123345",
       "isAdmin": false
     },
     {
-      "id": 5407,
-      "fullname": "test",
-      "email": "test@gmail.com",
-      "phoneNumber": "0987987987",
-      "password": "123",
+      "id": 7283,
+      "firstname": "Lê",
+      "lastName": "Tuấn Anh",
+      "email": "letuananh@gmail.com",
+      "password": "555666",
+      "isAdmin": false
+    },
+    {
+      "id": 7717,
+      "firstname": "Hồ",
+      "lastName": "Khôi",
+      "email": "hokhoi@gmail.com",
+      "password": "987654",
       "isAdmin": false
     }
   ],
@@ -30,7 +30,7 @@
       "id": 1,
       "img": "https://img.dominos.vn/Pizza+Seoul+vien+khoai+lang+-+TIENG+ANH.jpg",
       "name": "PIZZA SEOUL BÒ XÀO BULGOGI VIỀN KHOAI LANG PHÔ MAI - SEOUL BEEF BULGOGI CHEESY SWEET POTATO CRUST",
-      "price": 35,
+      "price": 8.02,
       "size": "Medium",
       "category": "favor"
     },
@@ -38,7 +38,7 @@
       "id": 2,
       "img": "https://img.dominos.vn/Pizza+Seoul+ko+vien+-+TIENG+ANH.jpg",
       "name": "PIZZA SEOUL BÒ XÀO BULGOGI - SEOUL BEEF BULGOGI",
-      "price": 35,
+      "price": 7.2,
       "size": "Medium",
       "category": "favor"
     },
@@ -46,7 +46,7 @@
       "id": 3,
       "img": "https://img.dominos.vn/Menu+BG+1.jpg",
       "name": "PIZZA BÒ BEEFSTEAK PHÔ MAI KIỂU NEW YORK - NEW YORK CHEESESTEAK",
-      "price": 35,
+      "price": 8.84,
       "size": "Medium",
       "category": "favor"
     },
@@ -54,7 +54,7 @@
       "id": 4,
       "img": "https://img.dominos.vn/Surf-turf-Pizza-Bo-Tom-Nuong-Kieu-My-1.jpg",
       "name": "PIZZA BÒ & TÔM NƯỚNG KIỂU MỸ - SURF & TURF",
-      "price": 35,
+      "price": 8.43,
       "size": "Medium",
       "category": "seafood"
     },
@@ -62,7 +62,7 @@
       "id": 5,
       "img": "https://img.dominos.vn/Pizza-Hai-San-Xot-Mayonnaise-Ocean-Mania.jpg",
       "name": "PIZZA HẢI SẢN XỐT MAYONNAISE - OCEAN MANIA",
-      "price": 35,
+      "price": 8.43,
       "size": "Medium",
       "category": "seafood"
     },
@@ -70,17 +70,281 @@
       "id": 6,
       "img": "https://img.dominos.vn/Pizzaminsea-Hai-San-Nhiet-Doi-Xot-Tieu.jpg",
       "name": "PIZZA HẢI SẢN NHIỆT ĐỚI XỐT TIÊU - PIZZAMIN SEA",
-      "price": 35,
+      "price": 8.43,
       "size": "Medium",
       "category": "seafood"
     },
     {
       "id": 7,
-      "img": "https://img.dominos.vn/Sausage-Kid-Mania-1.jpg",
-      "name": "PIZZA XÚC XÍCH XỐT PHÔ MAI - SAUSAGE KID MANIA",
-      "price": 35,
+      "img": "https://img.dominos.vn/Pizza-Hai-San-Xot-Ca-Chua-Seafood-Delight.jpg",
+      "name": "PIZZA HẢI SẢN XỐT CÀ CHUA - SEAFOOD DELIGHT",
+      "price": 8.43,
       "size": "Medium",
       "category": "seafood"
+    },
+    {
+      "id": 8,
+      "img": "https://img.dominos.vn/Sausage-Kid-Mania-1.jpg",
+      "name": "PIZZA XÚC XÍCH XỐT PHÔ MAI - SAUSAGE KID MANIA",
+      "price": 7.2,
+      "size": "Medium",
+      "category": "kid"
+    },
+    {
+      "id": 9,
+      "img": "https://img.dominos.vn/Pizza-Ga-Pho-Mai-Thit-Heo-Xong-Khoi-Cheesy-Chicken-Bacon.jpg",
+      "name": "PIZZA GÀ PHÔ MAI THỊT HEO XÔNG KHÓI - CHEESY CHICKEN BACON",
+      "price": 7.2,
+      "size": "Medium",
+      "category": "kid"
+    },
+    {
+      "id": 10,
+      "img": "https://img.dominos.vn/Menu+BG+-+TIENG+ANH_cheese.jpg",
+      "name": "PIZZA NGẬP VỊ PHÔ MAI HẢO HẠNG - CHEESY MADNESS",
+      "price": 7.2,
+      "size": "Medium",
+      "category": "traditional"
+    },
+    {
+      "id": 11,
+      "img": "https://img.dominos.vn/Pizza-Thap-Cam-Thuong-Hang-Extravaganza.jpg",
+      "name": "PIZZA THẬP CẨM THƯỢNG HẠNG - EXTRAVAGANZA",
+      "price": 8.43,
+      "size": "Medium",
+      "category": "traditional"
+    },
+    {
+      "id": 12,
+      "img": "https://img.dominos.vn/Veggie-mania-Pizza-Rau-Cu-Thap-Cam.jpg",
+      "name": "PIZZA RAU CỦ THẬP CẨM - VEGGIE MANIA",
+      "price": 7.2,
+      "size": "Medium",
+      "category": "traditional"
+    },
+    {
+      "id": 13,
+      "img": "https://img.dominos.vn/Meat-lover-Pizza-5-Loai-Thit-Thuong-Hang.jpg",
+      "name": "PIZZA 5 LOẠI THỊT THƯỢNG HẠNG - MEAT LOVERS",
+      "price": 8.43,
+      "size": "Medium",
+      "category": "traditional"
+    },
+    {
+      "id": 14,
+      "img": "https://img.dominos.vn/Pepperoni-feast-Pizza-Xuc-Xich-Y.jpg",
+      "name": "PIZZA XÚC XÍCH Ý TRUYỀN THỐNG - PEPPERONI FEAST",
+      "price": 8.43,
+      "size": "Medium",
+      "category": "traditional"
+    },
+    {
+      "id": 15,
+      "img": "https://img.dominos.vn/Pizza-Ga-Xot-Tuong-Kieu-Nhat-Teriyaki-Chicken.jpg",
+      "name": "PIZZA GÀ XỐT TƯƠNG KIỂU NHẬT - TERIYAKI CHICKEN",
+      "price": 7.2,
+      "size": "Medium",
+      "category": "traditional"
+    },
+    {
+      "id": 16,
+      "img": "https://img.dominos.vn/Pizza-Dam-Bong-Dua-Kieu-Hawaii-Hawaiian.jpg",
+      "name": "PIZZA DĂM BÔNG DỨA KIỂU HAWAII - HAWAIIAN",
+      "price": 7.2,
+      "size": "Medium",
+      "category": "traditional"
+    },
+    {
+      "id": 17,
+      "img": "https://img.dominos.vn/Pizza-Pho-Mai-Hao-Hang-Cheese-Mania.jpg",
+      "name": "PIZZA PHÔ MAI TRUYỀN THỐNG - CHEESE MANIA",
+      "price": 7.2,
+      "size": "Medium",
+      "category": "traditional"
+    },
+    {
+      "id": 18,
+      "img": "https://img.dominos.vn/Chicken-Satay-PC-NEW-NEW.jpg",
+      "name": "GÀ XIÊN NƯỚNG SATAY",
+      "price": 3.99,
+      "size": "Small",
+      "category": "chicken"
+    },
+    {
+      "id": 19,
+      "img": "https://img.dominos.vn/Khai-Vi%CC%A3-To%CC%82%CC%89ng-Ho%CC%9B%CC%A3p-PC-nen-xam-1_360X240px_1.jpg",
+      "name": "KHAI VỊ TỔNG HỢP",
+      "price": 3.99,
+      "size": "Small",
+      "category": "chicken"
+    },
+    {
+      "id": 20,
+      "img": "https://img.dominos.vn/MENU-PC-Ga%CC%80-Vie%CC%82n-Pho%CC%82-Mai-%C4%90u%CC%81t-Lo%CC%80-1.jpg",
+      "name": "GÀ VIÊN PHÔ MAI ĐÚT LÒ",
+      "price": 2.78,
+      "size": "Small",
+      "category": "chicken"
+    },
+    {
+      "id": 21,
+      "img": "https://img.dominos.vn/MENU-PC_Ca%CC%81nh-Ga%CC%80-BBQ-Kie%CC%82%CC%89u-My%CC%83-.jpg",
+      "name": "CÁNH GÀ BBQ KIỂU MỸ (6 MIẾNG)",
+      "price": 5.2,
+      "size": "Medium",
+      "category": "chicken"
+    },
+    {
+      "id": 22,
+      "img": "https://img.dominos.vn/MENU-PC_Ca%CC%81nh-Ga%CC%80-BBQ-Kie%CC%82%CC%89u-My%CC%83-.jpg",
+      "name": "CÁNH GÀ BBQ KIỂU MỸ (4 MIẾNG)",
+      "price": 3.99,
+      "size": "Small",
+      "category": "chicken"
+    },
+    {
+      "id": 23,
+      "img": "https://img.dominos.vn/MENU-PC-My%CC%80-Y%CC%81-Da%CC%86m-Bo%CC%82ng-_-Na%CC%82%CC%81m-Xo%CC%82%CC%81t-Kem-1.jpg",
+      "name": "MỲ Ý DĂM BÔNG & NẤM XỐT KEM",
+      "price": 3.58,
+      "size": "Small",
+      "category": "pasta"
+    },
+    {
+      "id": 24,
+      "img": "https://img.dominos.vn/MENU-PC_MI%CC%80-Y%CC%81-HA%CC%89I-SA%CC%89N-%C4%90U%CC%81T-LO%CC%80.jpg",
+      "name": "MỲ Ý HẢI SẢN ĐÚT LÒ",
+      "price": 3.58,
+      "size": "Small",
+      "category": "pasta"
+    },
+    {
+      "id": 25,
+      "img": "https://img.dominos.vn/MENU-PC_MI%CC%80-Y%CC%81-RAU-CU%CC%89-%C4%90U%CC%81T-LO%CC%80.jpg",
+      "name": "MỲ Ý RAU CỦ ĐÚT LÒ",
+      "price": 3.58,
+      "size": "Small",
+      "category": "pasta"
+    },
+    {
+      "id": 26,
+      "img": "https://img.dominos.vn/MENU-PC_Mi%CC%80-Y%CC%81-Bo%CC%80-Ba%CC%86%CC%80m-%C4%90u%CC%81t-Lo%CC%80.jpg",
+      "name": "MỲ Ý BÒ BẰM ĐÚT LÒ",
+      "price": 3.58,
+      "size": "Small",
+      "category": "pasta"
+    },
+    {
+      "id": 27,
+      "img": "https://img.dominos.vn/MENU-PC_Xu%CC%81c-Xi%CC%81ch-Xo%CC%82ng-Kho%CC%81i-%C4%90u%CC%81t-Lo%CC%80+-+Copy.jpg",
+      "name": "XÚC XÍCH XÔNG KHÓI ĐÚT LÒ (4 MIẾNG)",
+      "price": 1.98,
+      "size": "Small",
+      "category": "sausage"
+    },
+    {
+      "id": 28,
+      "img": "https://img.dominos.vn/MENU-PC_Xu%CC%81c-Xi%CC%81ch-Xo%CC%82ng-Kho%CC%81i-%C4%90u%CC%81t-Lo%CC%80+-+Copy.jpg",
+      "name": "XÚC XÍCH XÔNG KHÓI ĐÚT LÒ (8 MIẾNG)",
+      "price": 3.58,
+      "size": "Small",
+      "category": "sausage"
+    },
+    {
+      "id": 29,
+      "img": "https://img.dominos.vn/MENU-PC_Khoai-Ta%CC%82y-Pho%CC%82-Mai-%C4%90u%CC%81t-Lo%CC%80.jpg",
+      "name": "KHOAI TÂY PHÔ MAI ĐÚT LÒ",
+      "price": 1.98,
+      "size": "Small",
+      "category": "potato"
+    },
+    {
+      "id": 30,
+      "img": "https://img.dominos.vn/MENU-PC-Banh-sung-bo-1.jpg",
+      "name": "BÁNH SỪNG BÒ NHÂN BÒ BEEFSTEAK PHÔ MAI",
+      "price": 3.99,
+      "size": "Small",
+      "category": "bread"
+    },
+    {
+      "id": 31,
+      "img": "https://img.dominos.vn/3A8C2A9E-ADDC-4D23-A919-83A67EB8B327.jpeg",
+      "name": "BÁNH MÌ NƯỚNG PHÔ MAI CHẤM SỮA",
+      "price": 2.78,
+      "size": "Small",
+      "category": "bread"
+    },
+    {
+      "id": 32,
+      "img": "https://img.dominos.vn/5FB03526-5255-4A74-9E03-B4C394CA0DF7.jpeg",
+      "name": "BÁNH MÌ NƯỚNG BƠ TỎI CHẤM SỮA",
+      "price": 2.37,
+      "size": "Small",
+      "category": "bread"
+    },
+    {
+      "id": 33,
+      "img": "https://img.dominos.vn/MENU-PC_Ba%CC%81nh-Mi%CC%80-Nu%CC%9Bo%CC%9B%CC%81ng-Pho%CC%82-Mai.jpg",
+      "name": "BÁNH MÌ NƯỚNG PHÔ MAI",
+      "price": 2.37,
+      "size": "Small",
+      "category": "bread"
+    },
+    {
+      "id": 34,
+      "img": "https://img.dominos.vn/MENU-PC_Ba%CC%81nh-Mi%CC%80-Nu%CC%9Bo%CC%9B%CC%81ng-Bo%CC%9B-To%CC%89i.jpg",
+      "name": "BÁNH MÌ NƯỚNG BƠ TỎI",
+      "price": 1.98,
+      "size": "Small",
+      "category": "bread"
+    },
+    {
+      "id": 35,
+      "img": "https://img.dominos.vn/MON+PHU+PC-nen+xam_360X240px.jpg",
+      "name": "BÁNH CUỘN QUẾ XỐT LÁ DỨA",
+      "price": 1.98,
+      "size": "Small",
+      "category": "dessert"
+    },
+    {
+      "id": 36,
+      "img": "https://img.dominos.vn/MENU-PC-Cinnamon-Roll-nen-xam_360X240px.jpg",
+      "name": "BÁNH CUỘN QUẾ XỐT SỮA ĐẶC",
+      "price": 1.98,
+      "size": "Small",
+      "category": "dessert"
+    },
+    {
+      "id": 37,
+      "img": "https://img.dominos.vn/MENU-PC-Chocolate-Roll-nen-xam_360X240px.jpg",
+      "name": "BÁNH CUỘN QUẾ XỐT SÔ-CÔ-LA",
+      "price": 1.98,
+      "size": "Small",
+      "category": "dessert"
+    },
+    {
+      "id": 38,
+      "img": "https://img.dominos.vn/MENU-PC-Cinnamon-Roll-nen-xam_360X240px.jpg",
+      "name": "BÁNH CUỘN QUẾ XỐT LÁ DỨA",
+      "price": 1.98,
+      "size": "Small",
+      "category": "dessert"
+    },
+    {
+      "id": 39,
+      "img": "https://img.dominos.vn/MENU-PC_BA%CC%81NH-SO%CC%82-CO%CC%82-LA-%C4%90U%CC%81T-LO%CC%80.jpg",
+      "name": "BÁNH SÔ-CÔ-LA ĐÚT LÒ",
+      "price": 1.98,
+      "size": "Small",
+      "category": "dessert"
+    },
+    {
+      "id": 40,
+      "img": "https://img.dominos.vn/MENU-PC_choco-pizza.jpg",
+      "name": "CHOCOCHIPS",
+      "price": 1.98,
+      "size": "Small",
+      "category": "dessert"
     },
     {
       "id": 41,

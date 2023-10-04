@@ -8,7 +8,6 @@ function Test2() {
   const [task, setTask] = useState("");
   const {todolist} = useSelector((store) => store.todolist);
   const dispatch = useDispatch();
-  console.log("todolist", todolist);
 
   const handleAdd = () => {
     dispatch(todolistAction.addTodolist(task));

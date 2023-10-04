@@ -66,7 +66,7 @@ const seafoodList = [
   return (
     <div>
       <MenuLayout name='FLAVORS OF THE WORLD' data={favorFood}/>
-      <MenuLayout name='SUPER TOPPING' data={seafoodList}/>
+      <MenuLayout name='SEAFOOD CRAVERS' data={seafoodList}/>
     </div>
   )
 }

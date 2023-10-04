@@ -3,9 +3,15 @@ import Pagelayout from "../components/Pagelayout";
 import TextFields from "../components/TextField/TextField";
 import * as yup from "yup";
 import { useFormik } from "formik";
+import { useDispatch, useSelector } from "react-redux";
+import { register } from "../rtk/slices/authSlice";
 
 function Register() {
+  const {isLoading, userData} = useSelector(state => state.auth);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+  console.log(isLoading)
+  console.log(userData)
 
   const validationSchema = yup.object({
     firstname: yup.string().required("Chưa nhập first name"),
@@ -24,6 +30,10 @@ function Register() {
       .oneOf([yup.ref("password")], "Mật khẩu không trùng khớp"),
   });
 
+  const randomId = () => {
+    return Math.floor(Math.random()*9999)
+  }
+
   const formik = useFormik({
     initialValues: {
       firstname: "",
@@ -34,9 +44,17 @@ function Register() {
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
+      const newData = {
+        id : randomId(),
+        firstname : values.firstname,
+        lastName : values.lastname,
+        email : values.email,
+        password : values.password,
+        isAdmin : false
+      }
+      dispatch(register(newData))
       alert("Đăng ký thành công");
       navigate('/login');
-      console.log(values);
     },
   });
 
@@ -117,7 +135,7 @@ function Register() {
               />
               <div className="my-6 text-center">
                 <button
-                  className="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline"
+                  className="w-full px-4 py-2 font-bold text-white bg-red-700 rounded-md hover:bg-red-900 focus:outline-none focus:shadow-outline"
                   type="submit"
                 >
                   Register Account
@@ -126,7 +144,7 @@ function Register() {
               <hr className="mb-6 border-t" />
               <div className="text-center">
                 <a
-                  className="inline-block text-sm text-blue-500 align-baseline hover:text-blue-800"
+                  className="inline-block text-sm text-red-700 align-baseline hover:text-red-900"
                   href="#"
                 >
                   Forgot Password?
@@ -134,7 +152,7 @@ function Register() {
               </div>
               <div className="text-center">
                 <Link
-                  className="inline-block text-sm text-blue-500 align-baseline hover:text-blue-800"
+                  className="inline-block text-sm text-red-700 align-baseline hover:text-red-900"
                   to="/login"
                 >
                   Already have an account? Login!

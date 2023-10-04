@@ -70,14 +70,14 @@ function Login() {
                   >
                     Remember
                   </label>
-                  <a href="#" className="text-xs font-semibold text-purple-700">
+                  <a href="#" className="text-xs font-semibold text-red-700">
                     Forgot password?
                   </a>
                 </div>
                 <div className="mb-3">
                   <button
                     type="submit"
-                    className="mb-1.5 block w-full text-center text-white bg-purple-700 hover:bg-purple-900 px-2 py-1.5 rounded-md"
+                    className="mb-1.5 block w-full text-center text-white bg-red-700 hover:bg-red-900 px-2 py-1.5 rounded-md"
                   >
                     Sign in
                   </button>
@@ -96,7 +96,7 @@ function Login() {
                 </span>
                 <Link
                   to="/register"
-                  className="text-xs font-semibold text-purple-700"
+                  className="text-xs font-semibold text-red-700"
                 >
                   Sign up
                 </Link>
