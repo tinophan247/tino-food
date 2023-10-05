@@ -4,24 +4,24 @@
       "id": 1,
       "firstname": "Marathon",
       "lastName": "Guest",
-      "email": "marathonguest@gmmail.com",
+      "email": "marathonguest@gmail.com",
       "password": "123",
       "isAdmin": false
     },
     {
-      "id": 7283,
-      "firstname": "Lê",
-      "lastName": "Tuấn Anh",
-      "email": "letuananh@gmail.com",
-      "password": "555666",
-      "isAdmin": false
+      "id": 2,
+      "firstname": "Admin",
+      "lastName": "Page",
+      "email": "admin@gmail.com",
+      "password": "123",
+      "isAdmin": true
     },
     {
-      "id": 7717,
-      "firstname": "Hồ",
-      "lastName": "Khôi",
-      "email": "hokhoi@gmail.com",
-      "password": "987654",
+      "id": 561,
+      "firstname": "Thầy",
+      "lastName": "Thành",
+      "email": "thanh@gmail.com",
+      "password": "123456",
       "isAdmin": false
     }
   ],

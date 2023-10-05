@@ -4,9 +4,16 @@ import TextFields from "../components/TextField/TextField";
 import Check from "../components/Checkbox/Checkbox";
 import * as yup from "yup";
 import { useFormik } from "formik";
+import { useDispatch, useSelector } from "react-redux";
+import { login } from "../rtk/slices/authSlice";
+import { useEffect, useState } from "react";
 
 function Login() {
-  const navigate =useNavigate();
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const {isLogin} = useSelector(state=>state.auth)
+  const [tokenLogin,setTokenLogin] = useState(null)
+
   const validationSchema = yup.object({
     email: yup.string().required("Chưa nhập email").email('Chưa nhập đúng định dạng email'),
     password: yup.string().required("Chưa nhập password"),
@@ -19,14 +26,22 @@ function Login() {
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      alert('Đăng nhập thành công');
-      navigate('/')
-      console.log(values)
+      dispatch(login({
+        email : values.email,
+        password : values.password
+      }))
+      setTokenLogin(localStorage.getItem("token"))
     },
   });
 
+  useEffect(()=>{
+    const token = localStorage.getItem("token");
+    setTokenLogin(token)
+  },[tokenLogin])
+
   return (
     <Pagelayout>
+      {(isLogin || tokenLogin ) && navigate("/")}
       <div className="flex flex-wrap min-h-screen w-full content-center justify-center bg-gray-200 py-10">
         <div className="flex shadow-md">
           <div
