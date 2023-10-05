@@ -1,8 +1,18 @@
 import { Link, NavLink } from "react-router-dom";
 
 function Header() {
-  const activeClassname = 'block py-2 pr-4 pl-3 text-white rounded bg-red-700 lg:bg-transparent lg:text-red-700 lg:p-0 dark:text-white';
-  const unactiveClassname = 'block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-red-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700'
+  const token = localStorage.getItem("token");
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("userInfor");
+    window.location.reload();
+  }
+
+  const activeClassname =
+    "block py-2 pr-4 pl-3 text-white rounded bg-red-700 lg:bg-transparent lg:text-red-700 lg:p-0 dark:text-white";
+  const unactiveClassname =
+    "block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-red-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700";
   return (
     <header>
       <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800 shadow-2xl">
@@ -18,18 +28,30 @@ function Header() {
             </span>
           </Link>
           <div className="flex items-center lg:order-2">
-            <Link
-              to="/login"
-              className="text-gray-800 border border-gray-300 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800"
-            >
-              Sign in
-            </Link>
-            <Link
-              to="/cart"
-              className="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-red-600 dark:hover:bg-red-700 focus:outline-none dark:focus:ring-red-800"
-            >
-              Cart
-            </Link>
+            {token ? (
+              <div className="flex items-center gap-5">
+                <p className="text-base font-semibold">Hi Admin</p>
+                <button onClick={handleLogout} className="text-gray-800 border border-gray-300 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">
+                  Log out
+                </button>
+              </div>
+            ) : (
+              <nav>
+                <Link
+                  to="/login"
+                  className="text-gray-800 border border-gray-300 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800"
+                >
+                  Sign in
+                </Link>
+                <Link
+                  to="/cart"
+                  className="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-red-600 dark:hover:bg-red-700 focus:outline-none dark:focus:ring-red-800"
+                >
+                  Cart
+                </Link>
+              </nav>
+            )}
+
             <button
               data-collapse-toggle="mobile-menu-2"
               type="button"
@@ -64,6 +86,7 @@ function Header() {
               </svg>
             </button>
           </div>
+
           <div
             className="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1"
             id="mobile-menu-2"
@@ -85,7 +108,8 @@ function Header() {
                   to="/menu/pizza"
                   className={({ isActive }) =>
                     isActive ? activeClassname : unactiveClassname
-                  }                >
+                  }
+                >
                   Menu
                 </NavLink>
               </li>
@@ -94,7 +118,8 @@ function Header() {
                   to="/promotion"
                   className={({ isActive }) =>
                     isActive ? activeClassname : unactiveClassname
-                  }                >
+                  }
+                >
                   Promotion
                 </NavLink>
               </li>
@@ -103,7 +128,8 @@ function Header() {
                   to="/order-tracking"
                   className={({ isActive }) =>
                     isActive ? activeClassname : unactiveClassname
-                  }                >
+                  }
+                >
                   Order Tracking
                 </NavLink>
               </li>
