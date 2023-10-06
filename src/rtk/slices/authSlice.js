@@ -27,8 +27,15 @@ const authSlice = createSlice({
     isSuccess: false,
     isError: false,
     message: "",
-    isLogin : ""
+    isLogin : false
   },
+  reducers : {
+    logout : (state) => {
+      state.isLogin = false;
+      localStorage.removeItem("token");
+      localStorage.removeItem("userInfor");
+    }
+  } ,
   extraReducers: (builder) => {
     builder.addCase(register.pending, (state) => {
       state.isLoading = true;
@@ -60,10 +67,10 @@ const authSlice = createSlice({
       } else {
         //mã hóa dữ liệu
         let token = createToken(user, "keycheck");
-        //luuw token trong local storage
+        //lưu token trong local storage
         localStorage.setItem("token", token);
         localStorage.setItem("userInfor", JSON.stringify(user));
-        state.isLogin = token
+        state.isLogin = true
         alert("Đăng nhập thành công");
       }
     });
@@ -75,4 +82,5 @@ const authSlice = createSlice({
   },
 });
 
+export const {logout} = authSlice.actions
 export default authSlice.reducer;
