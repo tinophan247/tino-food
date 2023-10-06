@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import ProductItem from "../../../components/ProductItem";
+import ProductDetail from "../ProductDetail/ProductDetail"
 
 function MenuLayout({ data, name }) {
   return (
@@ -13,6 +14,7 @@ function MenuLayout({ data, name }) {
           </div>
         </div>
       </div>
+      <ProductDetail/>
     </div>
   );
 }

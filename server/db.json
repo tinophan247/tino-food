@@ -6,7 +6,8 @@
       "lastName": "Guest",
       "email": "marathonguest@gmail.com",
       "password": "123",
-      "isAdmin": false
+      "isAdmin": false,
+      "avatar": "https://t4.ftcdn.net/jpg/05/49/98/39/360_F_549983970_bRCkYfk0P6PP5fKbMhZMIb07mCJ6esXL.jpg"
     },
     {
       "id": 2,
@@ -14,23 +15,17 @@
       "lastName": "Page",
       "email": "admin@gmail.com",
       "password": "123",
-      "isAdmin": true
+      "isAdmin": true,
+      "avatar": "https://static.vecteezy.com/system/resources/previews/023/413/966/original/cute-kawaii-pizza-chibi-mascot-cartoon-style-vector.jpg"
     },
     {
-      "id": 561,
-      "firstname": "Thầy",
-      "lastName": "Thành",
-      "email": "thanh@gmail.com",
-      "password": "123456",
-      "isAdmin": false
-    },
-    {
-      "id": 8279,
-      "firstname": "Thông",
-      "lastName": "Thúi",
-      "email": "thongthui@gmail.com",
-      "password": "123456",
-      "isAdmin": false
+      "id": 8949,
+      "firstname": "Ông ",
+      "lastName": "Chủ",
+      "email": "boss@gmail.com",
+      "password": "111111",
+      "isAdmin": false,
+      "avatar": "https://t4.ftcdn.net/jpg/05/49/98/39/360_F_549983970_bRCkYfk0P6PP5fKbMhZMIb07mCJ6esXL.jpg"
     }
   ],
   "products": [

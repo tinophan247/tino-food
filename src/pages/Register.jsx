@@ -3,15 +3,12 @@ import Pagelayout from "../components/Pagelayout";
 import TextFields from "../components/TextField/TextField";
 import * as yup from "yup";
 import { useFormik } from "formik";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { register } from "../rtk/slices/authSlice";
 
 function Register() {
-  const {isLoading, userData} = useSelector(state => state.auth);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  console.log(isLoading)
-  console.log(userData)
 
   const validationSchema = yup.object({
     firstname: yup.string().required("Chưa nhập first name"),
@@ -50,7 +47,8 @@ function Register() {
         lastName : values.lastname,
         email : values.email,
         password : values.password,
-        isAdmin : false
+        isAdmin : false,
+        avatar : "https://t4.ftcdn.net/jpg/05/49/98/39/360_F_549983970_bRCkYfk0P6PP5fKbMhZMIb07mCJ6esXL.jpg"
       }
       dispatch(register(newData))
       alert("Đăng ký thành công");
