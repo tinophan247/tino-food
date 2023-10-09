@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
-function ProductItem({item}) {
+function ProductItem({item, handleOpen}) {
   return (
-    <div className="relative hover:shadow-xl hover:bg-white cursor-pointer rounded-lg">
+    <div onClick={handleOpen} className="relative hover:shadow-xl hover:bg-white cursor-pointer rounded-lg">
       <div className="w-full overflow-hidden rounded-md bg-gray-200 lg:h-80">
         <img
           src={item.img}

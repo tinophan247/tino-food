@@ -26,6 +26,15 @@
       "password": "111111",
       "isAdmin": false,
       "avatar": "https://t4.ftcdn.net/jpg/05/49/98/39/360_F_549983970_bRCkYfk0P6PP5fKbMhZMIb07mCJ6esXL.jpg"
+    },
+    {
+      "id": 9778,
+      "firstname": "Vinh",
+      "lastName": "Le",
+      "email": "lephucvinh184@gmail.com",
+      "password": "vinhle",
+      "isAdmin": false,
+      "avatar": "https://t4.ftcdn.net/jpg/05/49/98/39/360_F_549983970_bRCkYfk0P6PP5fKbMhZMIb07mCJ6esXL.jpg"
     }
   ],
   "products": [
