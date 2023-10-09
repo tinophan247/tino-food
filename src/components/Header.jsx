@@ -1,4 +1,4 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
 import { logout } from "../rtk/slices/authSlice";
 import { Avatar } from "@mui/material";
@@ -7,6 +7,7 @@ function Header() {
   const token = localStorage.getItem("token");
   const dispatch = useDispatch();
   const userInfor = JSON.parse(localStorage.getItem("userInfor"));
+  const {cartList} = useSelector(state => state.cart);
 
   const handleLogout = () => {
     dispatch(logout());
@@ -40,7 +41,7 @@ function Header() {
                 </p>
                 <Link to='/cart' className="cursor-pointer relative">
                   <ShoppingBagIcon />
-                  <p className="text-white bg-red-700 rounded-full text-xs w-4 h-4 text-center font-semibold absolute top-0 right-[-20%]">1</p>
+                  <p className="text-white bg-red-700 rounded-full text-xs w-4 h-4 text-center font-semibold absolute top-0 right-[-20%]">{cartList.length}</p>
                 </Link>
                 <button
                   onClick={handleLogout}

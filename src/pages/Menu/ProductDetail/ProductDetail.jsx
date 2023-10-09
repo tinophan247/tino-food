@@ -5,6 +5,8 @@ import CloseIcon from "@mui/icons-material/Close";
 import RemoveIcon from '@mui/icons-material/Remove';
 import AddIcon from '@mui/icons-material/Add';
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addCart } from "../../../rtk/slices/cartSlice";
 
 const style = {
   position: "absolute",
@@ -22,12 +24,13 @@ const style = {
 export default function ProductDetail({open, handleClose ,formState}) {
   const token = localStorage.getItem('token');
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  const handleAdd = () => {
+  const handleAdd = (item) => {
     if(!token) {
       navigate('/login')
     } else {
-      alert('Thêm thành công')
+      dispatch(addCart(item))
     }
   }
 
@@ -72,7 +75,7 @@ export default function ProductDetail({open, handleClose ,formState}) {
                   <AddIcon style={{fontSize: "30px", backgroundColor : '#E9ECEF', cursor : 'pointer'}}/>
               </div>
               <div>
-                <button onClick={handleAdd} className="bg-[#E31837] text-white h-12 w-60 rounded-md">Thêm vào giỏ hàng ${formState.price}</button>
+                <button onClick={() => handleAdd({...formState,quantity : 1})} className="bg-[#E31837] text-white h-12 w-60 rounded-md">Thêm vào giỏ hàng ${formState.price}</button>
               </div>
             </div>
           </div>

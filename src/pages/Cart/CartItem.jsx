@@ -1,17 +1,17 @@
-function CartItem() {
+/* eslint-disable react/prop-types */
+function CartItem({ item }) {
+  console.log(item)
   return (
     <div className="justify-between mb-6 rounded-lg bg-white p-6 shadow-md sm:flex sm:justify-start">
       <img
-        src="https://img.dominos.vn/Surf-turf-Pizza-Bo-Tom-Nuong-Kieu-My-1.jpg"
+        src={item.img}
         alt="product-image"
         className="w-full rounded-lg sm:w-40"
       />
       <div className="sm:ml-4 sm:flex sm:w-full sm:justify-between">
         <div className="mt-5 sm:mt-0">
-          <h2 className="text-lg font-bold text-gray-900">
-            PIZZA BÒ & TÔM NƯỚNG KIỂU MỸ - SURF & TURF
-          </h2>
-          <p className="mt-1 text-xs text-gray-700">Medium</p>
+          <h2 className="text-lg font-bold text-gray-900">{item.name}</h2>
+          <p className="mt-1 text-xs text-gray-700">{item.size}</p>
         </div>
         <div className="mt-4 flex justify-between sm:space-y-6 sm:mt-0 sm:block sm:space-x-6">
           <div className="flex items-center border-gray-100">
@@ -19,14 +19,14 @@ function CartItem() {
               -
             </span>
             <div className="h-8 w-8 border bg-white text-center text-xs outline-none flex items-center justify-center">
-              1
+              {item.quantity}
             </div>
             <span className="cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-red-500 hover:text-red-50">
               +
             </span>
           </div>
           <div className="flex items-center space-x-4">
-            <p className="text-sm">$35</p>
+            <p className="text-sm">${item.price}</p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
