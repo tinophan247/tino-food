@@ -30,6 +30,7 @@ function MenuLayout({ data, name }) {
       setOpen(true);
       setFormState(item)
     }
+    
 
   return (
     <div className=" bg-gray-100">
