@@ -2,23 +2,23 @@ import { useDispatch } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
 import { logout } from "../rtk/slices/authSlice";
 import { Avatar } from "@mui/material";
-
+import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 function Header() {
   const token = localStorage.getItem("token");
   const dispatch = useDispatch();
   const userInfor = JSON.parse(localStorage.getItem("userInfor"));
 
   const handleLogout = () => {
-    dispatch(logout())
+    dispatch(logout());
     window.location.reload();
-  }
+  };
 
   const activeClassname =
     "block py-2 pr-4 pl-3 text-white rounded bg-red-700 lg:bg-transparent lg:text-red-700 lg:p-0 dark:text-white";
   const unactiveClassname =
     "block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-red-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700";
   return (
-    <header>
+    <header className="fixed top-0 w-full z-[999]">
       <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800 shadow-2xl">
         <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
           <Link to="/" className="flex items-center">
@@ -35,8 +35,17 @@ function Header() {
             {token ? (
               <div className="flex items-center gap-5">
                 <Avatar alt="avatar default" src={userInfor.avatar} />
-                <p className="text-base font-semibold">Hi {userInfor.firstname + " "+ userInfor.lastName} </p>
-                <button onClick={handleLogout} className="text-gray-800 border border-gray-300 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">
+                <p className="text-base font-semibold">
+                  Hi {userInfor.firstname + " " + userInfor.lastName}
+                </p>
+                <Link to='/cart' className="cursor-pointer relative">
+                  <ShoppingBagIcon />
+                  <p className="text-white bg-red-700 rounded-full text-xs w-4 h-4 text-center font-semibold absolute top-0 right-[-20%]">1</p>
+                </Link>
+                <button
+                  onClick={handleLogout}
+                  className="text-gray-800 border border-gray-300 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800"
+                >
                   Log out
                 </button>
               </div>
@@ -49,10 +58,10 @@ function Header() {
                   Sign in
                 </Link>
                 <Link
-                  to="/cart"
+                  to="/register"
                   className="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-red-600 dark:hover:bg-red-700 focus:outline-none dark:focus:ring-red-800"
                 >
-                  Cart
+                  Sign up
                 </Link>
               </nav>
             )}

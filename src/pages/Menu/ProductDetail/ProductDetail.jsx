@@ -1,10 +1,10 @@
-import * as React from "react";
+/* eslint-disable react/prop-types */
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
 import CloseIcon from "@mui/icons-material/Close";
 import RemoveIcon from '@mui/icons-material/Remove';
 import AddIcon from '@mui/icons-material/Add';
+import { useNavigate } from "react-router-dom";
 
 const style = {
   position: "absolute",
@@ -19,14 +19,20 @@ const style = {
   display: "flex",
 };
 
-export default function ProductDetail() {
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+export default function ProductDetail({open, handleClose ,formState}) {
+  const token = localStorage.getItem('token');
+  const navigate = useNavigate();
+
+  const handleAdd = () => {
+    if(!token) {
+      navigate('/login')
+    } else {
+      alert('Thêm thành công')
+    }
+  }
 
   return (
     <div>
-      <Button onClick={handleOpen}>Open modal</Button>
       <Modal
         open={open}
         onClose={handleClose}
@@ -36,14 +42,14 @@ export default function ProductDetail() {
         <Box sx={style}>
           <img
             className="w-[40%] h-full"
-            src="https://img.dominos.vn/Khai-Vi%CC%A3-To%CC%82%CC%89ng-Ho%CC%9B%CC%A3p-PC-nen-xam-1_360X240px_1.jpg"
+            src={formState.img}
             alt="not found"
           />
           <div className="w-[60%] h-full">
             <div className="h-[75%] border-b border-gray-300">
               <div className="flex justify-between">
                 <p className="pt-2 pl-5 text-xl font-semibold text-[#087CB1]">
-                  Khai Vị Tổng Hợp
+                {formState.name}
                 </p>
                 <CloseIcon
                 onClick={handleClose}
@@ -61,12 +67,12 @@ export default function ProductDetail() {
             </div>
             <div className="h-[25%] flex justify-between items-center  px-5">
               <div className="flex">
-                  <RemoveIcon style={{fontSize: "30px", backgroundColor : '#E9ECEF'}}/>
+                  <RemoveIcon style={{fontSize: "30px", backgroundColor : '#E9ECEF', cursor : 'pointer'}}/>
                   <div className="text-[20px] bg-[#E9ECEF] font-bold w-10 text-center">1</div>
-                  <AddIcon style={{fontSize: "30px", backgroundColor : '#E9ECEF'}}/>
+                  <AddIcon style={{fontSize: "30px", backgroundColor : '#E9ECEF', cursor : 'pointer'}}/>
               </div>
               <div>
-                <button className="bg-[#E31837] text-white h-12 w-60 rounded-md">Thêm vào giỏ hàng 100,000đ</button>
+                <button onClick={handleAdd} className="bg-[#E31837] text-white h-12 w-60 rounded-md">Thêm vào giỏ hàng ${formState.price}</button>
               </div>
             </div>
           </div>
