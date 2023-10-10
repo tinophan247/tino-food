@@ -65,7 +65,7 @@ export default function ProductDetail({open, handleClose ,formState}) {
                 />
               </div>
               <div className="mt-5 px-5 font-semibold text-sm text-gray-500">
-                <p>2 miếng Cánh gà nướng BBQ, 3 miếng Xúc Xích Xông Khói Đút Lò và Khoai tây phô mai đút lò</p>
+                <p>{formState.description}</p>
               </div>
             </div>
             <div className="h-[25%] flex justify-between items-center  px-5">
@@ -75,7 +75,7 @@ export default function ProductDetail({open, handleClose ,formState}) {
                   <AddIcon style={{fontSize: "30px", backgroundColor : '#E9ECEF', cursor : 'pointer'}}/>
               </div>
               <div>
-                <button onClick={() => handleAdd({...formState,quantity : 1})} className="bg-[#E31837] text-white h-12 w-60 rounded-md">Thêm vào giỏ hàng ${formState.price}</button>
+                <button onClick={() => handleAdd({...formState,quantity : 1})} className="bg-[#E31837] text-white h-12 w-60 rounded-md font-semibold">Add to Cart ${formState.price}</button>
               </div>
             </div>
           </div>

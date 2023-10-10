@@ -11,11 +11,14 @@ import { useEffect, useState } from "react";
 function Login() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const {isLogin} = useSelector(state=>state.auth)
-  const [tokenLogin,setTokenLogin] = useState(null)
+  const { isLogin } = useSelector((state) => state.auth);
+  const [tokenLogin, setTokenLogin] = useState(null);
 
   const validationSchema = yup.object({
-    email: yup.string().required("Chưa nhập email").email('Chưa nhập đúng định dạng email'),
+    email: yup
+      .string()
+      .required("Chưa nhập email")
+      .email("Chưa nhập đúng định dạng email"),
     password: yup.string().required("Chưa nhập password"),
   });
 
@@ -26,23 +29,25 @@ function Login() {
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      dispatch(login({
-        email : values.email,
-        password : values.password
-      }))
-      setTokenLogin(localStorage.getItem("token"))
+      dispatch(
+        login({
+          email: values.email,
+          password: values.password,
+        })
+      );
+      setTokenLogin(localStorage.getItem("token"));
     },
   });
 
-  useEffect(()=>{
+  useEffect(() => {
     const token = localStorage.getItem("token");
-    setTokenLogin(token)
-  },[tokenLogin])
+    setTokenLogin(token);
+  }, [tokenLogin]);
 
   return (
     <Pagelayout>
-      {(isLogin || tokenLogin ) && navigate("/")}
-      <div className="flex flex-wrap min-h-screen w-full content-center justify-center bg-gray-200 py-10">
+      {(isLogin || tokenLogin) && navigate("/")}
+      <div className="flex flex-wrap min-h-screen w-full content-center justify-center py-10 bgLogin">
         <div className="flex shadow-md">
           <div
             className="flex flex-wrap content-center justify-center rounded-l-md bg-white"
@@ -61,7 +66,7 @@ function Login() {
                     onChange={formik.handleChange("email")}
                     required={true}
                     helperText={formik.touched.email && formik.errors.email}
-                    error={formik.touched.email && Boolean(formik.errors.email) }
+                    error={formik.touched.email && Boolean(formik.errors.email)}
                     width="299px"
                   />
                 </div>
@@ -72,8 +77,12 @@ function Login() {
                     value={formik.values.password}
                     onChange={formik.handleChange("password")}
                     required={true}
-                    helperText={formik.touched.password && formik.errors.password}
-                    error={formik.touched.password && Boolean(formik.errors.password)}
+                    helperText={
+                      formik.touched.password && formik.errors.password
+                    }
+                    error={
+                      formik.touched.password && Boolean(formik.errors.password)
+                    }
                     width="299px"
                   />
                 </div>
