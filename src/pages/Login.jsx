@@ -7,6 +7,7 @@ import { useFormik } from "formik";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../rtk/slices/authSlice";
 import { useEffect, useState } from "react";
+import LoginGoogle from "../components/LoginGoogle";
 
 function Login() {
   const navigate = useNavigate();
@@ -105,13 +106,7 @@ function Login() {
                   >
                     Sign in
                   </button>
-                  <button className="flex flex-wrap justify-center w-full border border-gray-300 hover:border-gray-500 px-2 py-1.5 rounded-md">
-                    <img
-                      className="w-5 mr-2"
-                      src="https://lh3.googleusercontent.com/COxitqgJr1sJnIDe8-jiKhxDx1FrYbtRHKJ9z_hELisAlapwE9LUPh6fcXIfb5vwpbMl4xl9H9TRFPc5NOO8Sb3VSgIBrfRYvW6cUA"
-                    />
-                    Sign in with Google
-                  </button>
+                  <LoginGoogle/>
                 </div>
               </form>
               <div className="text-center">

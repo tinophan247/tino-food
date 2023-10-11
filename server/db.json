@@ -42,7 +42,7 @@
       "id": 1,
       "img": "https://img.dominos.vn/Pizza+Seoul+vien+khoai+lang+-+TIENG+ANH.jpg",
       "name": "SEOUL BEEF BULGOGI CHEESY SWEET POTATO CRUST",
-      "price": 8.02,
+      "price": 8,
       "size": "Medium",
       "category": "favor",
       "description" : "Mozzarella Cheese, Bulgogi Sauce, Bulgogi Beef, Korean Vermicelli, Carrot, Mushroom, Green Bell Pepper, White Sesame, Sweet Potato Cheese Crust"
@@ -51,7 +51,7 @@
       "id": 2,
       "img": "https://img.dominos.vn/Pizza+Seoul+ko+vien+-+TIENG+ANH.jpg",
       "name": "SEOUL BEEF BULGOGI",
-      "price": 7.2,
+      "price": 7,
       "size": "Medium",
       "category": "favor",
       "description" : "Mozzarella Cheese, Bulgogi Sauce, Bulgogi Beef, Korean Vermicelli, Carrot, Mushroom, Green Bell Pepper, White Sesame"
@@ -60,7 +60,7 @@
       "id": 3,
       "img": "https://img.dominos.vn/Menu+BG+1.jpg",
       "name": "NEW YORK CHEESESTEAK",
-      "price": 8.84,
+      "price": 9,
       "size": "Medium",
       "category": "favor",
       "description" : "Beefsteak, Demi-Glace Sauce (Steak Sauce), Sour Cream Sauce, Mozzarella Cheese, Mushrooms, Tomatoes, Onions, Seaweed Powder"
@@ -69,7 +69,7 @@
       "id": 4,
       "img": "https://img.dominos.vn/Surf-turf-Pizza-Bo-Tom-Nuong-Kieu-My-1.jpg",
       "name": "SURF & TURF",
-      "price": 8.43,
+      "price": 8,
       "size": "Medium",
       "category": "seafood",
       "description" : "Tomato Sauce, Cheese Sauce, Mozzarella Cheese, Shrimp, Mexican Beef, Tomato, Onion"
@@ -78,7 +78,7 @@
       "id": 5,
       "img": "https://img.dominos.vn/Pizza-Hai-San-Xot-Mayonnaise-Ocean-Mania.jpg",
       "name": "OCEAN MANIA",
-      "price": 8.43,
+      "price": 8,
       "size": "Medium",
       "category": "seafood",
       "description" : "Mayonnaise Sauce, Mozzarella Cheese, Shrimp, Squid, Crab Sticks, Onions"
@@ -87,7 +87,7 @@
       "id": 6,
       "img": "https://img.dominos.vn/Pizzaminsea-Hai-San-Nhiet-Doi-Xot-Tieu.jpg",
       "name": "PIZZAMIN SEA",
-      "price": 8.43,
+      "price": 8,
       "size": "Medium",
       "category": "seafood",
       "description" : "Black pepper sauce, Mozzarella Cheese, Cheddar Cheese, Pineapple, Onion, Shrimp, Squid"
@@ -96,7 +96,7 @@
       "id": 7,
       "img": "https://img.dominos.vn/Pizza-Hai-San-Xot-Ca-Chua-Seafood-Delight.jpg",
       "name": "SEAFOOD DELIGHT",
-      "price": 8.43,
+      "price": 8,
       "size": "Medium",
       "category": "seafood",
       "description" : "Tomato Sauce, Mozzarella Cheese, Shrimp, Squid, Crab Sticks, Onions"
@@ -105,7 +105,7 @@
       "id": 8,
       "img": "https://img.dominos.vn/Sausage-Kid-Mania-1.jpg",
       "name": "SAUSAGE KID MANIA",
-      "price": 7.2,
+      "price": 7,
       "size": "Medium",
       "category": "kid",
       "description" : "Cheese sauce, Mozzarella cheese, Sausage, Salted Pork, Corn, Pineapple"
@@ -114,7 +114,7 @@
       "id": 9,
       "img": "https://img.dominos.vn/Pizza-Ga-Pho-Mai-Thit-Heo-Xong-Khoi-Cheesy-Chicken-Bacon.jpg",
       "name": "CHEESY CHICKEN BACON",
-      "price": 7.2,
+      "price": 7,
       "size": "Medium",
       "category": "kid",
       "description" : "Cheese Sauce, Chicken, Ham, Mozzarella Cheese, Tomatoes"
@@ -123,7 +123,7 @@
       "id": 10,
       "img": "https://img.dominos.vn/Menu+BG+-+TIENG+ANH_cheese.jpg",
       "name": "CHEESY MADNESS",
-      "price": 7.2,
+      "price": 7,
       "size": "Medium",
       "category": "traditional",
       "description" : "Cheddar Cheese, Mozzarella Cheese, Blue Cheese Balls, Cheese Rim, Cheese Sauce and Served With Honey."
@@ -132,7 +132,7 @@
       "id": 11,
       "img": "https://img.dominos.vn/Pizza-Thap-Cam-Thuong-Hang-Extravaganza.jpg",
       "name": "EXTRAVAGANZA",
-      "price": 8.43,
+      "price": 8,
       "size": "Medium",
       "category": "traditional",
       "description" : "Tomato Sauce, Mozzarella Cheese, Pepperoni Sausage, Ham, Italian Sausage, Beef Balls, Green Bell Peppers, Button Mushrooms, Onions, Olives"
@@ -141,7 +141,7 @@
       "id": 12,
       "img": "https://img.dominos.vn/Veggie-mania-Pizza-Rau-Cu-Thap-Cam.jpg",
       "name": "VEGGIE MANIA",
-      "price": 7.2,
+      "price": 7,
       "size": "Medium",
       "category": "traditional",
       "description" : "Tomato Sauce, Mozzarella Cheese, Onions, Green Bell Peppers, Olives, Button Mushrooms, Tomatoes, Pineapple"
@@ -150,7 +150,7 @@
       "id": 13,
       "img": "https://img.dominos.vn/Meat-lover-Pizza-5-Loai-Thit-Thuong-Hang.jpg",
       "name": "MEAT LOVERS",
-      "price": 8.43,
+      "price": 8,
       "size": "Medium",
       "category": "traditional",
       "description" : "Tomato Sauce, Mozzarella Cheese, Pepperoni Sausage, Ham, Italian Sausage, Beef Balls, Salted Pork "
@@ -159,7 +159,7 @@
       "id": 14,
       "img": "https://img.dominos.vn/Pepperoni-feast-Pizza-Xuc-Xich-Y.jpg",
       "name": "PEPPERONI FEAST",
-      "price": 8.43,
+      "price": 8,
       "size": "Medium",
       "category": "traditional",
       "description" : "Tomato Sauce, Mozzarella Cheese, Pepperoni Sausage"
@@ -168,7 +168,7 @@
       "id": 15,
       "img": "https://img.dominos.vn/Pizza-Ga-Xot-Tuong-Kieu-Nhat-Teriyaki-Chicken.jpg",
       "name": "TERIYAKI CHICKEN",
-      "price": 7.2,
+      "price": 7,
       "size": "Medium",
       "category": "traditional",
       "description" : "Teriyaki Sauce, Mozzarella Cheese, Mayonnaise, Chicken, Mushroom, Onion"
@@ -177,7 +177,7 @@
       "id": 16,
       "img": "https://img.dominos.vn/Pizza-Dam-Bong-Dua-Kieu-Hawaii-Hawaiian.jpg",
       "name": "HAWAIIAN",
-      "price": 7.2,
+      "price": 7,
       "size": "Medium",
       "category": "traditional",
       "description" : "Tomato Sauce, Mozzarella Cheese, Ham, Pineapple"
@@ -186,7 +186,7 @@
       "id": 17,
       "img": "https://img.dominos.vn/Pizza-Pho-Mai-Hao-Hang-Cheese-Mania.jpg",
       "name": "CHEESE MANIA",
-      "price": 7.2,
+      "price": 7,
       "size": "Medium",
       "category": "traditional",
       "description" : "Tomato sauce, Mozzarella cheese"
@@ -195,7 +195,7 @@
       "id": 18,
       "img": "https://img.dominos.vn/Chicken-Satay-PC-NEW-NEW.jpg",
       "name": "SATAY GRILLED CHICKEN SKEWERS",
-      "price": 3.99,
+      "price": 4,
       "size": "Small",
       "category": "chicken",
       "description" : "Satay Grilled Chicken Skewers (3 Skewers), Thai Sweet and Sour Dipping Sauce"
@@ -204,7 +204,7 @@
       "id": 19,
       "img": "https://img.dominos.vn/Khai-Vi%CC%A3-To%CC%82%CC%89ng-Ho%CC%9B%CC%A3p-PC-nen-xam-1_360X240px_1.jpg",
       "name": "General Appetizer",
-      "price": 3.99,
+      "price": 4,
       "size": "Small",
       "category": "chicken",
       "description" : "2 pieces of BBQ Chicken Wings, 3 pieces of Oven Smoked Sausage and Oven Baked Cheese Potatoes"
@@ -213,7 +213,7 @@
       "id": 20,
       "img": "https://img.dominos.vn/MENU-PC-Ga%CC%80-Vie%CC%82n-Pho%CC%82-Mai-%C4%90u%CC%81t-Lo%CC%80-1.jpg",
       "name": "Oven-Baked Chicken Cheese Balls",
-      "price": 2.78,
+      "price": 2,
       "size": "Small",
       "category": "chicken",
       "description" : "Chicken Popcorn, Bacon, Mozarella Cheese, Pizza Sauce"
@@ -222,7 +222,7 @@
       "id": 21,
       "img": "https://img.dominos.vn/MENU-PC_Ca%CC%81nh-Ga%CC%80-BBQ-Kie%CC%82%CC%89u-My%CC%83-.jpg",
       "name": "American Style BBQ Chicken Wings (6 pieces)",
-      "price": 5.2,
+      "price": 5,
       "size": "Medium",
       "category": "chicken",
       "description" : "Chicken Wings, BBQ Sauce"
@@ -231,7 +231,7 @@
       "id": 22,
       "img": "https://img.dominos.vn/MENU-PC_Ca%CC%81nh-Ga%CC%80-BBQ-Kie%CC%82%CC%89u-My%CC%83-.jpg",
       "name": "American Style BBQ Chicken Wings (4 pieces)",
-      "price": 3.99,
+      "price": 4,
       "size": "Small",
       "category": "chicken",
       "description" : "Chicken Wings, BBQ Sauce"
@@ -240,7 +240,7 @@
       "id": 23,
       "img": "https://img.dominos.vn/MENU-PC-My%CC%80-Y%CC%81-Da%CC%86m-Bo%CC%82ng-_-Na%CC%82%CC%81m-Xo%CC%82%CC%81t-Kem-1.jpg",
       "name": "Pasta with Ham & Mushrooms in Cream Sauce",
-      "price": 3.58,
+      "price": 3,
       "size": "Small",
       "category": "pasta",
       "description" : "Spaghetti, Ham, Mushrooms, Mozarella Cheese, Carbonara Cream Sauce"
@@ -249,7 +249,7 @@
       "id": 24,
       "img": "https://img.dominos.vn/MENU-PC_MI%CC%80-Y%CC%81-HA%CC%89I-SA%CC%89N-%C4%90U%CC%81T-LO%CC%80.jpg",
       "name": "Seafood Pasta",
-      "price": 3.58,
+      "price": 3,
       "size": "Small",
       "category": "pasta",
       "description" : "Mild spicy noodle sauce, shrimp, crab sticks, squid, Mozzarella cheese"
@@ -258,7 +258,7 @@
       "id": 25,
       "img": "https://img.dominos.vn/MENU-PC_MI%CC%80-Y%CC%81-RAU-CU%CC%89-%C4%90U%CC%81T-LO%CC%80.jpg",
       "name": "Veggie Pasta",
-      "price": 3.58,
+      "price": 3,
       "size": "Small",
       "category": "pasta",
       "description" : "Mild spicy noodle sauce, mushrooms, green bell peppers, tomatoes, pineapple, black olives, Mozzarella cheese."
@@ -267,7 +267,7 @@
       "id": 26,
       "img": "https://img.dominos.vn/MENU-PC_Mi%CC%80-Y%CC%81-Bo%CC%80-Ba%CC%86%CC%80m-%C4%90u%CC%81t-Lo%CC%80.jpg",
       "name": "Bolognese Pasta",
-      "price": 3.58,
+      "price": 3,
       "size": "Small",
       "category": "pasta",
       "description" : "Bolognese noodle sauce, Mozzarella cheese"
@@ -276,7 +276,7 @@
       "id": 27,
       "img": "https://img.dominos.vn/MENU-PC_Xu%CC%81c-Xi%CC%81ch-Xo%CC%82ng-Kho%CC%81i-%C4%90u%CC%81t-Lo%CC%80+-+Copy.jpg",
       "name": "Oven Smoked Sausages (4 pieces)",
-      "price": 1.98,
+      "price": 2,
       "size": "Small",
       "category": "sausage",
       "description" : "Smoked Sausage, BBQ Sauce"
@@ -285,7 +285,7 @@
       "id": 28,
       "img": "https://img.dominos.vn/MENU-PC_Xu%CC%81c-Xi%CC%81ch-Xo%CC%82ng-Kho%CC%81i-%C4%90u%CC%81t-Lo%CC%80+-+Copy.jpg",
       "name": "Oven Smoked Sausages (8 pieces)",
-      "price": 3.58,
+      "price": 3,
       "size": "Small",
       "category": "sausage",
       "description" : "Smoked Sausage, BBQ Sauce"
@@ -294,7 +294,7 @@
       "id": 29,
       "img": "https://img.dominos.vn/MENU-PC_Khoai-Ta%CC%82y-Pho%CC%82-Mai-%C4%90u%CC%81t-Lo%CC%80.jpg",
       "name": "Baked Cheese Potatoes",
-      "price": 1.98,
+      "price": 2,
       "size": "Small",
       "category": "potato",
       "description" : "Potatoes, Bacon, Cheese"
@@ -303,7 +303,7 @@
       "id": 30,
       "img": "https://img.dominos.vn/MENU-PC-Banh-sung-bo-1.jpg",
       "name": "Beefsteak Cheese Croissants",
-      "price": 3.99,
+      "price": 4,
       "size": "Small",
       "category": "bread",
       "description" : "Beefsteak, Steak Sauce, Sour Cream Sauce, Cheese, Dried Seaweed, Avocado"
@@ -312,7 +312,7 @@
       "id": 31,
       "img": "https://img.dominos.vn/3A8C2A9E-ADDC-4D23-A919-83A67EB8B327.jpeg",
       "name": "Cheese Toast With Milk",
-      "price": 2.78,
+      "price": 3,
       "size": "Small",
       "category": "bread",
       "description" : "Bread, Butter, Cheese, Garlic, Pizza Sauce, Condensed Milk"
@@ -321,7 +321,7 @@
       "id": 32,
       "img": "https://img.dominos.vn/5FB03526-5255-4A74-9E03-B4C394CA0DF7.jpeg",
       "name": "Garlic Toast With Milk",
-      "price": 2.37,
+      "price": 2,
       "size": "Small",
       "category": "bread",
       "description" : "Bread, Butter, Garlic Powder, Pizza Sauce, Condensed Milk."
@@ -330,7 +330,7 @@
       "id": 33,
       "img": "https://img.dominos.vn/MENU-PC_Ba%CC%81nh-Mi%CC%80-Nu%CC%9Bo%CC%9B%CC%81ng-Pho%CC%82-Mai.jpg",
       "name": "Cheese Toast",
-      "price": 2.37,
+      "price": 2,
       "size": "Small",
       "category": "bread",
       "description" : "Bread, Butter, Cheese, Garlic Powder, Pizza Sauce"
@@ -339,7 +339,7 @@
       "id": 34,
       "img": "https://img.dominos.vn/MENU-PC_Ba%CC%81nh-Mi%CC%80-Nu%CC%9Bo%CC%9B%CC%81ng-Bo%CC%9B-To%CC%89i.jpg",
       "name": "Garlic butter toast",
-      "price": 1.98,
+      "price": 2,
       "size": "Small",
       "category": "bread",
       "description" : "Bread, Butter, Garlic Powder, Pizza Sauce"
@@ -348,7 +348,7 @@
       "id": 35,
       "img": "https://img.dominos.vn/MON+PHU+PC-nen+xam_360X240px.jpg",
       "name": "Cinnamon Rolls with Pandan Leaf Sauce",
-      "price": 1.98,
+      "price": 2 ,
       "size": "Small",
       "category": "dessert",
       "description" : ""
@@ -357,7 +357,7 @@
       "id": 36,
       "img": "https://img.dominos.vn/MENU-PC-Cinnamon-Roll-nen-xam_360X240px.jpg",
       "name": "Cinnamon Rolls With Condensed Milk Sauce",
-      "price": 1.98,
+      "price": 2,
       "size": "Small",
       "category": "dessert",
       "description" : "Soft and Foam Roll Cake, Cinnamon Sugar Powder, Butter, Condensed Milk"
@@ -366,7 +366,7 @@
       "id": 37,
       "img": "https://img.dominos.vn/MENU-PC-Chocolate-Roll-nen-xam_360X240px.jpg",
       "name": "Cinnamon Rolls with Chocolate Sauce",
-      "price": 1.98,
+      "price": 2,
       "size": "Small",
       "category": "dessert",
       "description" : "Soft and Foam Rolls, Black and White Chocolate Chips, Dark Chocolate Sauce"
@@ -375,7 +375,7 @@
       "id": 38,
       "img": "https://img.dominos.vn/MENU-PC-Cinnamon-Roll-nen-xam_360X240px.jpg",
       "name": "Cinnamon Roll Cake With Milk Cream Sauce",
-      "price": 1.98,
+      "price": 2,
       "size": "Small",
       "category": "dessert",
       "description" : "Soft and Foam Roll Cake, Cinnamon Sugar Powder, Butter, Milk Cream Sauce"
@@ -384,7 +384,7 @@
       "id": 39,
       "img": "https://img.dominos.vn/MENU-PC_BA%CC%81NH-SO%CC%82-CO%CC%82-LA-%C4%90U%CC%81T-LO%CC%80.jpg",
       "name": "Oven Baked Chocolate Cake",
-      "price": 1.98,
+      "price": 2,
       "size": "Small",
       "category": "dessert",
       "description" : "Pure Chocolate Cake"
@@ -393,7 +393,7 @@
       "id": 40,
       "img": "https://img.dominos.vn/MENU-PC_choco-pizza.jpg",
       "name": "CHOCOCHIPS",
-      "price": 1.98,
+      "price": 2,
       "size": "Small",
       "category": "dessert",
       "description" : "Black and White Chocolate Chips, Dark Chocolate Sauce, Mozarella Cheese, Sour Cream Sauce, Crispy Thin Base"
@@ -402,7 +402,7 @@
       "id": 41,
       "img": "https://img.dominos.vn/coke-390.jpg",
       "name": "Coke 390ml",
-      "price": 1.01,
+      "price": 1,
       "size": "Small",
       "category": "drinks",
       "description" : ""
@@ -411,7 +411,7 @@
       "id": 42,
       "img": "https://img.dominos.vn/fanta-390.jpg",
       "name": "Fanta 390ml",
-      "price": 1.01,
+      "price": 1,
       "size": "Small",
       "category": "drinks",
       "description" : ""
@@ -420,7 +420,7 @@
       "id": 43,
       "img": "https://img.dominos.vn/Sprite-390.jpg",
       "name": "Sprite 390ml",
-      "price": 1.01,
+      "price": 1,
       "size": "Small",
       "category": "drinks",
       "description" : ""
@@ -429,7 +429,7 @@
       "id": 44,
       "img": "https://img.dominos.vn/coke-zero.jpg",
       "name": "Coke Zero can 320ML",
-      "price": 1.01,
+      "price": 1,
       "size": "Small",
       "category": "drinks",
       "description" : ""
@@ -438,7 +438,7 @@
       "id": 45,
       "img": "https://img.dominos.vn/coke-1.5.jpg",
       "name": "Coke 1.5L",
-      "price": 1.58,
+      "price": 2,
       "size": "Large",
       "category": "drinks",
       "description" : ""
@@ -447,7 +447,7 @@
       "id": 46,
       "img": "https://img.dominos.vn/Sprite-1.5L.jpg",
       "name": "Sprite 1.5L",
-      "price": 1.58,
+      "price": 2,
       "size": "Large",
       "category": "drinks",
       "description" : ""
@@ -456,7 +456,7 @@
       "id": 47,
       "img": "https://img.dominos.vn/fanta-1.5.jpg",
       "name": "Fanta 1.5L",
-      "price": 1.58,
+      "price": 2,
       "size": "Large",
       "category": "drinks",
       "description" : ""
@@ -465,7 +465,7 @@
       "id": 48,
       "img": "https://img.dominos.vn/daisani.jpg",
       "name": "Dasani 510ML",
-      "price": 1.01,
+      "price": 1,
       "size": "Small",
       "category": "drinks",
       "description" : ""
@@ -474,7 +474,7 @@
       "id": 49,
       "img": "https://img.dominos.vn/dasani-pc-new.png",
       "name": "Dasani 1.5L",
-      "price": 1.58,
+      "price": 2,
       "size": "Large",
       "category": "drinks",
       "description" : ""
