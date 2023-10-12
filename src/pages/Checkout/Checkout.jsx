@@ -6,15 +6,21 @@ import { useNavigate } from "react-router";
 import TextFields from "../../components/TextField/TextField";
 import { useEffect, useState } from "react";
 import SingleSelect from "../../components/Dropdown/SingleSelect";
-import axios from "axios";
+import { apiGetPublicDistricts, apiGetPublicProvinces, apiGetPublicWards } from "../../services/apiLocation";
 
 function Checkout() {
   const userEmail = JSON.parse(localStorage.getItem("userInfor")).email;
   const [email, setEmail] = useState(userEmail);
   const [provinces,setProvinces] = useState([]);
+  const [districts, setDistricts] = useState([])
+  const [wards, setWards] = useState([]);
   const { cartList } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  console.log(districts)
+console.log(wards)
+
 
   const handleIncrease = (item) => {
     dispatch(increase(item));
@@ -37,24 +43,31 @@ function Checkout() {
     0
   );
 
-const apiGetPublicProvinces = () => new Promise( (resolve,reject) => {
-    try {
-        const response = axios.get("https://vapi.vnappmob.com/api/province/");
-        resolve(response)
-    } catch (error) {
-        reject(error)
-    }
-})
-
 useEffect(() => {
   const fetchPublicProvince = async () => {
     const response = await apiGetPublicProvinces();
-    console.log(response)
     if (response.status === 200) {
       setProvinces(response?.data.results);
     }
   };
   fetchPublicProvince();
+
+  const fetchPublicDistrict = async () => {
+    const response = await apiGetPublicDistricts(92);
+    if (response.status === 200) {
+      setDistricts(response?.data.results);
+    }
+  }
+  fetchPublicDistrict()
+  
+
+  const fetchPublicWard = async () => {
+    const response = await apiGetPublicWards(925);
+    if (response.status === 200) {
+      setWards(response?.data.results);
+    }
+  }
+  fetchPublicWard();
 }, [])
 
 
@@ -66,13 +79,21 @@ const convertDataProvince = (array) => {
   return ProvinceList;
 };
 
-console.log()
+const convertDataDistrict = (array) => {
+  const DistrictList = array.map((item) => ({
+    value: item.district_id,
+    label: item.district_name,
+  }));
+  return DistrictList;
+};
 
-  const dataProvince = [
-    { value: 1, label: "Hồ Chí Mính" },
-    { value: 2, label: "Hà Nội" },
-    { value: 3, label: "Đà Nẵng" },
-  ];
+const convertDataWard = (array) => {
+  const WardList = array.map((item) => ({
+    value: item.ward_id,
+    label: item.ward_name,
+  }));
+  return WardList;
+};
 
   return (
     <Pagelayout>
@@ -103,7 +124,7 @@ console.log()
             <SingleSelect
               name="District"
               width="290px"
-              options={dataProvince}
+              options={convertDataDistrict(districts)}
               required={true}
             />
           </div>
@@ -111,7 +132,7 @@ console.log()
             <SingleSelect
               name="Ward/Commune"
               width="290px"
-              options={dataProvince}
+              options={convertDataWard(wards)}
               required={true}
             />
             <TextFields name="Address" required={true} width="290px" />
