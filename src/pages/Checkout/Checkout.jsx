@@ -6,21 +6,27 @@ import { useNavigate } from "react-router";
 import TextFields from "../../components/TextField/TextField";
 import { useEffect, useState } from "react";
 import SingleSelect from "../../components/Dropdown/SingleSelect";
-import { apiGetPublicDistricts, apiGetPublicProvinces, apiGetPublicWards } from "../../services/apiLocation";
+import {
+  apiGetPublicDistricts,
+  apiGetPublicProvinces,
+  apiGetPublicWards,
+} from "../../services/apiLocation";
+import * as yup from "yup";
+import { useFormik } from "formik";
 
 function Checkout() {
   const userEmail = JSON.parse(localStorage.getItem("userInfor")).email;
-  const [email, setEmail] = useState(userEmail);
-  const [provinces,setProvinces] = useState([]);
-  const [districts, setDistricts] = useState([])
+  const [provinces, setProvinces] = useState([]);
+  const [districts, setDistricts] = useState([]);
   const [wards, setWards] = useState([]);
+  const [formState ,setFormState] = useState({
+    province : 0,
+    district : 0,
+    ward : 0
+  });
   const { cartList } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
-  console.log(districts)
-console.log(wards)
-
 
   const handleIncrease = (item) => {
     dispatch(increase(item));
@@ -43,62 +49,96 @@ console.log(wards)
     0
   );
 
-useEffect(() => {
-  const fetchPublicProvince = async () => {
-    const response = await apiGetPublicProvinces();
-    if (response.status === 200) {
-      setProvinces(response?.data.results);
-    }
+  useEffect(() => {
+    const fetchPublicProvince = async () => {
+      const response = await apiGetPublicProvinces();
+      if (response.status === 200) {
+        setProvinces(response?.data.results);
+      }
+    };
+    fetchPublicProvince();
+  }, []);
+
+  useEffect(()=> {
+    const fetchPublicDistrict = async () => {
+      const response = await apiGetPublicDistricts(formState.province);
+      if (response.status === 200) {
+        setDistricts(response?.data.results);
+      }
+    };
+    formState.province !== 0 && fetchPublicDistrict();
+  },[formState.province])
+
+  useEffect(()=> {
+    const fetchPublicWard = async () => {
+      const response = await apiGetPublicWards(formState.district);
+      if (response.status === 200) {
+        setWards(response?.data.results);
+      }
+    };
+    formState.district && fetchPublicWard();
+  },[formState.district])
+
+  const convertDataProvince = (array) => {
+    const ProvinceList = array.map((item) => ({
+      value: item.province_id,
+      label: item.province_name,
+    }));
+    return ProvinceList;
   };
-  fetchPublicProvince();
 
-  const fetchPublicDistrict = async () => {
-    const response = await apiGetPublicDistricts(92);
-    if (response.status === 200) {
-      setDistricts(response?.data.results);
-    }
-  }
-  fetchPublicDistrict()
-  
+  const convertDataDistrict = (array) => {
+    const DistrictList = array.map((item) => ({
+      value: item.district_id,
+      label: item.district_name,
+    }));
+    return DistrictList;
+  };
 
-  const fetchPublicWard = async () => {
-    const response = await apiGetPublicWards(925);
-    if (response.status === 200) {
-      setWards(response?.data.results);
-    }
-  }
-  fetchPublicWard();
-}, [])
+  const convertDataWard = (array) => {
+    const WardList = array.map((item) => ({
+      value: item.ward_id,
+      label: item.ward_name,
+    }));
+    return WardList;
+  };
 
+  const validationSchema = yup.object({
+    email: yup.string().required("Please enter email").email("Invalid email"),
+    firstname: yup.string().required("Please enter first name"),
+    lastname: yup.string().required("Please enter last name"),
+    province: yup.number().required("Please select province"),
+    district: yup.number().required("Please select district"),
+    ward: yup.number().required("Please select ward"),
+    address: yup.string().required("Please enter address"),
+    phone: yup.string().required("Please enter phone"),
+  });
 
-const convertDataProvince = (array) => {
-  const ProvinceList = array.map((item) => ({
-    value: item.province_id,
-    label: item.province_name,
-  }));
-  return ProvinceList;
-};
-
-const convertDataDistrict = (array) => {
-  const DistrictList = array.map((item) => ({
-    value: item.district_id,
-    label: item.district_name,
-  }));
-  return DistrictList;
-};
-
-const convertDataWard = (array) => {
-  const WardList = array.map((item) => ({
-    value: item.ward_id,
-    label: item.ward_name,
-  }));
-  return WardList;
-};
+  const formik = useFormik({
+    initialValues: {
+      email: userEmail,
+      firstname: "",
+      lastname: "",
+      province: formState.province,
+      district: formState.district,
+      ward: formState.ward,
+      address: "",
+      phone: "",
+    },
+    validationSchema: validationSchema,
+    onSubmit: (values) => {
+      console.log(values);
+      alert("Thanh toán thành công");
+    },
+  });
 
   return (
     <Pagelayout>
       {cartList.length === 0 && navigate("/")}
-      <form className="mt-20 flex  mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8 h-auto">
+      <form
+        onSubmit={formik.handleSubmit}
+        className="mt-20 flex  mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8 h-auto"
+      >
         <div className="w-3/5 p-5">
           <p className="font-semibold text-base">Contact Information</p>
           <TextFields
@@ -106,13 +146,25 @@ const convertDataWard = (array) => {
             type="email"
             required={true}
             width="600px"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={formik.values.email}
+            onChange={formik.handleChange("email")}
           />
           <p className="font-semibold text-base mt-5">Shipping Information</p>
           <div className="flex gap-5">
-            <TextFields name="First Name" required={true} width="290px" />
-            <TextFields name="Last Name" required={true} width="290px" />
+            <TextFields
+              name="First Name"
+              required={true}
+              width="290px"
+              value={formik.values.firstname}
+              onChange={formik.handleChange("firstname")}
+            />
+            <TextFields
+              name="Last Name"
+              required={true}
+              width="290px"
+              value={formik.values.lastname}
+              onChange={formik.handleChange("lastname")}
+            />
           </div>
           <div className="flex gap-5">
             <SingleSelect
@@ -120,12 +172,16 @@ const convertDataWard = (array) => {
               width="290px"
               options={convertDataProvince(provinces)}
               required={true}
+              value={formState.province}
+              onChange={(e) => setFormState({...formState,province : e.target.value})}
             />
             <SingleSelect
               name="District"
               width="290px"
               options={convertDataDistrict(districts)}
               required={true}
+              value={formState.district}
+              onChange={(e) => setFormState({...formState,district : e.target.value})}
             />
           </div>
           <div className="flex gap-5">
@@ -134,10 +190,25 @@ const convertDataWard = (array) => {
               width="290px"
               options={convertDataWard(wards)}
               required={true}
+              value={formState.ward}
+              onChange={(e) => setFormState({...formState,ward : e.target.value})}
             />
-            <TextFields name="Address" required={true} width="290px" />
+            <TextFields
+              name="Address"
+              required={true}
+              width="290px"
+              value={formik.values.address}
+              onChange={formik.handleChange("address")}
+            />
           </div>
-          <TextFields name="Phone" type="phone" required={true} width="600px" />
+          <TextFields
+            name="Phone"
+            type="phone"
+            required={true}
+            width="600px"
+            value={formik.values.phone}
+            onChange={formik.handleChange("phone")}
+          />
         </div>
         <div className="w-2/5 p-5">
           <p className="font-semibold text-base">Order Sumary</p>
