@@ -8,6 +8,7 @@ import Pizza from "./pages/Menu/Pizza/Pizza"
 import SideDish from "./pages/Menu/Pizza/SideDish"
 import Dessert from "./pages/Menu/Pizza/Dessert"
 import Drinks from "./pages/Menu/Pizza/Drinks"
+import Checkout from "./pages/Checkout/Checkout"
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="dessert" element={<Dessert/>}/>
         <Route path="drinks" element={<Drinks/>}/>
       </Route>
+      <Route path="/checkout" element={<Checkout/>}/>
     </Routes>
     </>
   )

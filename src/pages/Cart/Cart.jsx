@@ -2,10 +2,12 @@ import { useDispatch, useSelector } from "react-redux";
 import Pagelayout from "../../components/Pagelayout";
 import CartItem from "./CartItem";
 import { decrease, increase, removeCart } from "../../rtk/slices/cartSlice";
+import { useNavigate } from "react-router";
 
 function Cart() {
   const { cartList } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
+  const navigate = useNavigate()
 
   const handleIncrease = (item) => {
     dispatch(increase(item));
@@ -24,6 +26,15 @@ function Cart() {
   };
 
   const totalPrice = cartList.reduce((acc, curr) => acc + curr.price * curr.quantity ,0)
+
+  const handleCheckout = () => {
+    if(cartList.length !== 0 ) {
+      navigate('/checkout')
+    } else {
+      alert('Nothing in your cart. Please add something!!!')
+      navigate('/')
+    }
+  }
 
   return (
     <Pagelayout>
@@ -62,7 +73,7 @@ function Cart() {
                 <p className="text-sm text-gray-700">including VAT</p>
               </div>
             </div>
-            <button className="mt-6 w-full rounded-md bg-red-500 py-1.5 font-medium text-red-50 hover:bg-red-600">
+            <button onClick={handleCheckout} className="mt-6 w-full rounded-md bg-red-500 py-1.5 font-medium text-red-50 hover:bg-red-600">
               Check out
             </button>
           </div>
