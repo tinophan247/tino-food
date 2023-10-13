@@ -15,7 +15,6 @@ import * as yup from "yup";
 import { useFormik } from "formik";
 
 function Checkout() {
-  const userEmail = JSON.parse(localStorage.getItem("userInfor")).email;
   const [provinces, setProvinces] = useState([]);
   const [districts, setDistricts] = useState([]);
   const [wards, setWards] = useState([]);
@@ -27,6 +26,8 @@ function Checkout() {
   const { cartList } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const userEmail = JSON.parse(localStorage.getItem("userInfor")).email;
+  const history = JSON.parse(localStorage.getItem("history")) ?? []
 
   const handleIncrease = (item) => {
     dispatch(increase(item));
@@ -103,15 +104,18 @@ function Checkout() {
     return WardList;
   };
 
+  const randomId = () => {
+    return Math.floor(Math.random()*99999)
+  }
+
+  const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
+
   const validationSchema = yup.object({
     email: yup.string().required("Please enter email").email("Invalid email"),
     firstname: yup.string().required("Please enter first name"),
     lastname: yup.string().required("Please enter last name"),
-    province: yup.number().required("Please select province"),
-    district: yup.number().required("Please select district"),
-    ward: yup.number().required("Please select ward"),
     address: yup.string().required("Please enter address"),
-    phone: yup.string().required("Please enter phone"),
+    phone: yup.string().required("Please enter phone number").matches(phoneRegExp, 'Phone number is not valid').min(10, "too short").max(10, "too long")
   });
 
   const formik = useFormik({
@@ -119,16 +123,29 @@ function Checkout() {
       email: userEmail,
       firstname: "",
       lastname: "",
-      province: formState.province,
-      district: formState.district,
-      ward: formState.ward,
       address: "",
       phone: "",
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      console.log(values);
-      alert("Thanh toán thành công");
+      const newData = {
+        id : randomId(),
+        email : values.email,
+        firstname : values.firstname,
+        lastname : values.lastname,
+        province : formState.province,
+        district : formState.district,
+        ward : formState.ward,
+        address : values.address,
+        phone: values.phone,
+        cart : [...cartList],
+        totalPrice : totalPrice
+      }
+      alert("Đặt hàng thành công");
+      localStorage.setItem("history",JSON.stringify([...history,newData]));
+      localStorage.removeItem("cart");
+      navigate("/");
+      window.location.reload();
     },
   });
 
@@ -148,6 +165,12 @@ function Checkout() {
             width="600px"
             value={formik.values.email}
             onChange={formik.handleChange("email")}
+            helperText={
+              formik.touched.email && formik.errors.email
+            }
+            error={
+              formik.touched.email && Boolean(formik.errors.email)
+            }
           />
           <p className="font-semibold text-base mt-5">Shipping Information</p>
           <div className="flex gap-5">
@@ -157,6 +180,12 @@ function Checkout() {
               width="290px"
               value={formik.values.firstname}
               onChange={formik.handleChange("firstname")}
+              helperText={
+                formik.touched.firstname && formik.errors.firstname
+              }
+              error={
+                formik.touched.firstname && Boolean(formik.errors.firstname)
+              }
             />
             <TextFields
               name="Last Name"
@@ -164,6 +193,12 @@ function Checkout() {
               width="290px"
               value={formik.values.lastname}
               onChange={formik.handleChange("lastname")}
+              helperText={
+                formik.touched.lastname && formik.errors.lastname
+              }
+              error={
+                formik.touched.lastname && Boolean(formik.errors.lastname)
+              }
             />
           </div>
           <div className="flex gap-5">
@@ -199,6 +234,12 @@ function Checkout() {
               width="290px"
               value={formik.values.address}
               onChange={formik.handleChange("address")}
+              helperText={
+                formik.touched.address && formik.errors.address
+              }
+              error={
+                formik.touched.address && Boolean(formik.errors.address)
+              }
             />
           </div>
           <TextFields
@@ -208,6 +249,12 @@ function Checkout() {
             width="600px"
             value={formik.values.phone}
             onChange={formik.handleChange("phone")}
+            helperText={
+              formik.touched.phone && formik.errors.phone
+            }
+            error={
+              formik.touched.phone && Boolean(formik.errors.phone)
+            }
           />
         </div>
         <div className="w-2/5 p-5">
