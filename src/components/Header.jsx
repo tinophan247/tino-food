@@ -66,7 +66,6 @@ function Header() {
                 </Link>
               </nav>
             )}
-
             <button
               data-collapse-toggle="mobile-menu-2"
               type="button"

@@ -14,6 +14,7 @@ import {
 import * as yup from "yup";
 import { useFormik } from "formik";
 import moment from "moment";
+import { notification } from "../../utils/helper";
 
 function Checkout() {
   const [provinces, setProvinces] = useState([]);
@@ -142,9 +143,9 @@ function Checkout() {
         phone: values.phone,
         cart : [...cartList],
         totalPrice : totalPrice,
-        dateplaced : moment().format('LL')
+        dateplaced : moment()
       }
-      alert("Đặt hàng thành công");
+      notification("Order Success");
       localStorage.setItem("history",JSON.stringify([...history,newData]));
       localStorage.removeItem("cart");
       navigate("/");

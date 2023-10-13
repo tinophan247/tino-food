@@ -5,6 +5,7 @@ import * as yup from "yup";
 import { useFormik } from "formik";
 import { useDispatch } from "react-redux";
 import { register } from "../rtk/slices/authSlice";
+import { notification } from "../utils/helper";
 
 function Register() {
   const dispatch = useDispatch();
@@ -51,7 +52,7 @@ function Register() {
         avatar : "https://t4.ftcdn.net/jpg/05/49/98/39/360_F_549983970_bRCkYfk0P6PP5fKbMhZMIb07mCJ6esXL.jpg"
       }
       dispatch(register(newData))
-      alert("Đăng ký thành công");
+      notification("Register Success");
       navigate('/login');
     },
   });

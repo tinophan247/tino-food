@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Pagelayout from "../../components/Pagelayout";
 import OrderTrackingItem from "./OrderTrackingItem";
+import moment from "moment";
 
 function OrderTracking() {
   const history = JSON.parse(localStorage.getItem("history")) ?? [];
@@ -17,7 +18,7 @@ function OrderTracking() {
                 <div className="flex gap-20 items-center">
                   <div>
                     <p className="text-base font-semibold">Date placed</p>
-                    <p>{item.dateplaced}</p>
+                    <p>{moment(item.dateplaced).format('LL')}</p>
                   </div>
                   <div>
                     <p className="text-base font-semibold">Order number</p>
@@ -29,7 +30,7 @@ function OrderTracking() {
                   </div>
                 </div>
                 <div className="flex gap-5">
-                  <Link to="/order-tracking-details">
+                  <Link to={`/order-tracking-details/${item.id}`}>
                     <button className="w-28 h-10 bg-white border border-gray-300 rounded-md">
                       View Detail
                     </button>
