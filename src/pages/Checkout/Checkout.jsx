@@ -13,6 +13,7 @@ import {
 } from "../../services/apiLocation";
 import * as yup from "yup";
 import { useFormik } from "formik";
+import moment from "moment";
 
 function Checkout() {
   const [provinces, setProvinces] = useState([]);
@@ -27,7 +28,7 @@ function Checkout() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const userEmail = JSON.parse(localStorage.getItem("userInfor")).email;
-  const history = JSON.parse(localStorage.getItem("history")) ?? []
+  const history = JSON.parse(localStorage.getItem("history")) ?? [];
 
   const handleIncrease = (item) => {
     dispatch(increase(item));
@@ -108,6 +109,7 @@ function Checkout() {
     return Math.floor(Math.random()*99999)
   }
 
+
   const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
 
   const validationSchema = yup.object({
@@ -139,7 +141,8 @@ function Checkout() {
         address : values.address,
         phone: values.phone,
         cart : [...cartList],
-        totalPrice : totalPrice
+        totalPrice : totalPrice,
+        dateplaced : moment().format('LL')
       }
       alert("Đặt hàng thành công");
       localStorage.setItem("history",JSON.stringify([...history,newData]));
