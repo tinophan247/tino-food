@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { logout } from "../rtk/slices/authSlice";
 import { Avatar } from "@mui/material";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
@@ -7,9 +7,11 @@ function Header() {
   const token = localStorage.getItem("token");
   const dispatch = useDispatch();
   const userInfor = JSON.parse(localStorage.getItem("userInfor"));
-  const {cartList} = useSelector(state => state.cart);
+  const { cartList } = useSelector((state) => state.cart);
+  const navigate = useNavigate();
 
   const handleLogout = () => {
+    navigate("/");
     dispatch(logout());
     window.location.reload();
   };
@@ -39,9 +41,11 @@ function Header() {
                 <p className="text-base font-semibold">
                   Hi {userInfor.firstname + " " + userInfor.lastName}
                 </p>
-                <Link to='/cart' className="cursor-pointer relative">
+                <Link to="/cart" className="cursor-pointer relative">
                   <ShoppingBagIcon />
-                  <p className="text-white bg-red-700 rounded-full text-xs w-4 h-4 text-center font-semibold absolute top-0 right-[-20%]">{cartList.length}</p>
+                  <p className="text-white bg-red-700 rounded-full text-xs w-4 h-4 text-center font-semibold absolute top-0 right-[-20%]">
+                    {cartList.length}
+                  </p>
                 </Link>
                 <button
                   onClick={handleLogout}
