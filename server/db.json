@@ -4,10 +4,10 @@
       "id": 1,
       "firstname": "Marathon",
       "lastName": "Guest",
-      "email": "marathonguest@gmail.com",
+      "email": "marathon@gmail.com",
       "password": "123",
       "isAdmin": false,
-      "avatar": "https://t4.ftcdn.net/jpg/05/49/98/39/360_F_549983970_bRCkYfk0P6PP5fKbMhZMIb07mCJ6esXL.jpg"
+      "avatar": "https://hrchannels.com/Upload/avatar/20211021/162801972_ME.png"
     },
     {
       "id": 2,
@@ -19,38 +19,11 @@
       "avatar": "https://static.vecteezy.com/system/resources/previews/023/413/966/original/cute-kawaii-pizza-chibi-mascot-cartoon-style-vector.jpg"
     },
     {
-      "id": 8949,
-      "firstname": "Ông",
-      "lastName": "Chủ",
-      "email": "boss@gmail.com",
-      "password": "111111",
-      "isAdmin": false,
-      "avatar": "https://t4.ftcdn.net/jpg/05/49/98/39/360_F_549983970_bRCkYfk0P6PP5fKbMhZMIb07mCJ6esXL.jpg"
-    },
-    {
-      "id": 9778,
-      "firstname": "Vinh",
-      "lastName": "Le",
-      "email": "lephucvinh184@gmail.com",
-      "password": "vinhle",
-      "isAdmin": false,
-      "avatar": "https://t4.ftcdn.net/jpg/05/49/98/39/360_F_549983970_bRCkYfk0P6PP5fKbMhZMIb07mCJ6esXL.jpg"
-    },
-    {
-      "id": 3727,
-      "firstname": "Lê",
-      "lastName": "Tuấn Anh",
-      "email": "letuananh@gmail.com",
+      "id": 3160,
+      "firstname": "Nguyễn Văn",
+      "lastName": "A",
+      "email": "a@gmail.com",
       "password": "123456",
-      "isAdmin": false,
-      "avatar": "https://t4.ftcdn.net/jpg/05/49/98/39/360_F_549983970_bRCkYfk0P6PP5fKbMhZMIb07mCJ6esXL.jpg"
-    },
-    {
-      "id": 1724,
-      "firstname": "Lê",
-      "lastName": "Tuấn An",
-      "email": "letuanan@gmail.com",
-      "password": "111111",
       "isAdmin": false,
       "avatar": "https://t4.ftcdn.net/jpg/05/49/98/39/360_F_549983970_bRCkYfk0P6PP5fKbMhZMIb07mCJ6esXL.jpg"
     }

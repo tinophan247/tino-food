@@ -70,7 +70,7 @@ function Register() {
 
   return (
     <Pagelayout>
-      <div className="flex flex-wrap min-h-screen w-full content-center justify-center bg-gray-200 py-10">
+      <div className="flex flex-wrap min-h-screen w-full content-center justify-center bg-gray-200 py-10 mt-14">
         <div className="w-full xl:w-3/4 lg:w-11/12 flex">
           <div className="w-full h-auto bg-gray-400 hidden lg:block lg:w-5/12 bg-cover rounded-l-lg bg-[url('https://e0.pxfuel.com/wallpapers/527/704/desktop-wallpaper-pizza-cooking.jpg')]" />
           <div className="w-full lg:w-7/12 bg-white p-5 rounded-lg lg:rounded-l-none">
