@@ -32,7 +32,7 @@ function Cart() {
     if(cartList.length !== 0 ) {
       navigate('/checkout')
     } else {
-      notification('Nothing in your cart. Please add something!!!')
+      notification('Nothing in your cart. Please add something!!!','question')
       navigate('/')
     }
   }

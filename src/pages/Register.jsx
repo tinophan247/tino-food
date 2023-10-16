@@ -3,13 +3,15 @@ import Pagelayout from "../components/Pagelayout";
 import TextFields from "../components/TextField/TextField";
 import * as yup from "yup";
 import { useFormik } from "formik";
-import { useDispatch } from "react-redux";
-import { register } from "../rtk/slices/authSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { getListUser, register } from "../rtk/slices/authSlice";
 import { notification } from "../utils/helper";
+import { useEffect } from "react";
 
 function Register() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const {userData} = useSelector(state => state.auth)
 
   const validationSchema = yup.object({
     firstname: yup.string().required("Chưa nhập first name"),
@@ -51,11 +53,20 @@ function Register() {
         isAdmin : false,
         avatar : "https://t4.ftcdn.net/jpg/05/49/98/39/360_F_549983970_bRCkYfk0P6PP5fKbMhZMIb07mCJ6esXL.jpg"
       }
-      dispatch(register(newData))
-      notification("Register Success");
-      navigate('/login');
+      let checkExistEmail = userData.find(x => x.email == values.email)
+      if (checkExistEmail) {
+        notification("Email Exist. Please Try Again",'error');
+      } else {
+        dispatch(register(newData))
+        notification("Register Success");
+        navigate('/login');
+      }
     },
   });
+
+  useEffect(()=>{
+    dispatch(getListUser())
+  },[])
 
   return (
     <Pagelayout>

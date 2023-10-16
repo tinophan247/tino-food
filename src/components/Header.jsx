@@ -133,16 +133,6 @@ function Header() {
               </li>
               <li>
                 <NavLink
-                  to="/promotion"
-                  className={({ isActive }) =>
-                    isActive ? activeClassname : unactiveClassname
-                  }
-                >
-                  Promotion
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
                   to="/order-tracking"
                   className={({ isActive }) =>
                     isActive ? activeClassname : unactiveClassname
@@ -153,18 +143,10 @@ function Header() {
               </li>
               <li>
                 <NavLink
-                  to="/e-voucher"
+                  to="/about"
                   className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-red-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
                 >
-                  E-voucher
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/contact"
-                  className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-red-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
-                >
-                  Contact
+                  About
                 </NavLink>
               </li>
             </ul>

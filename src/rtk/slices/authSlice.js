@@ -16,6 +16,11 @@ export const login = createAsyncThunk("login", async (inforLogin) => {
   };
 });
 
+export const getListUser = createAsyncThunk("getListUser", async () => {
+  const res = await axios.get("http://localhost:4000/users");
+  return res.data
+})
+
 function createToken(userObj, privateKey) {
   return CryptoJS.AES.encrypt(JSON.stringify(userObj), privateKey).toString();
 }
@@ -63,7 +68,7 @@ const authSlice = createSlice({
       );
       // kiểm tra đăng nhập
       if (!user) {
-        notification("Email or Password was wrong");
+        notification("Email or Password was wrong",'error');
       } else {
         //mã hóa dữ liệu
         let token = createToken(user, "keycheck");
@@ -75,6 +80,18 @@ const authSlice = createSlice({
       }
     });
     builder.addCase(login.rejected, (state) => {
+      state.isLoading = false;
+      state.isError = true;
+      state.message = "Lỗi";
+    });
+    builder.addCase(getListUser.pending, (state) => {
+      state.isLoading = true;
+    });
+    builder.addCase(getListUser.fulfilled, (state,action) => {
+      state.isLoading = false;
+      state.userData = [...action.payload];
+    });
+    builder.addCase(getListUser.rejected, (state) => {
       state.isLoading = false;
       state.isError = true;
       state.message = "Lỗi";

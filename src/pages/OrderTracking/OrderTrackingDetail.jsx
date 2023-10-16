@@ -127,7 +127,7 @@ const OrderTrackingDetail = () => {
                           Shipping Address
                         </p>
                         <p className="w-48 lg:w-full xl:w-48 text-center md:text-left text-sm leading-5 text-gray-600">
-                          {item.address}
+                          {item.address}, {item.ward}, {item.district}, {item.province}
                         </p>
                       </div>
                     </div>
