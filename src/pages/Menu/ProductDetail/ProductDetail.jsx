@@ -33,6 +33,8 @@ export default function ProductDetail({ open, handleClose, formState }) {
       navigate("/login");
     } else {
       dispatch(addCart(item));
+      handleClose();
+      setQt(1)
     }
   };
 

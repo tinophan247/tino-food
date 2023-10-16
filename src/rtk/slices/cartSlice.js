@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { notification } from "../../utils/helper";
 const cartList = JSON.parse(localStorage.getItem("cart")) || []
 
 const cartSlice = createSlice({
@@ -25,6 +26,7 @@ const cartSlice = createSlice({
       //cập nhật lại giỏ hàng
       state.cartList = [...state.cartList];
       localStorage.setItem("cart",JSON.stringify(state.cartList))
+      notification('Add Product Success')
     },
     increase: (state, action) => {
       //Tìm kiếm xem sản phẩm có tồn tại hay không
@@ -58,6 +60,7 @@ const cartSlice = createSlice({
       //Cập nhật lại giỏ hàng
       state.cartList = [...state.cartList];
       localStorage.setItem("cart",JSON.stringify(state.cartList))
+      notification('Remove Product Success')
     }
 
   },

@@ -3,6 +3,7 @@ import Pagelayout from "../../components/Pagelayout";
 import CartItem from "./CartItem";
 import { decrease, increase, removeCart } from "../../rtk/slices/cartSlice";
 import { useNavigate } from "react-router";
+import { notification } from "../../utils/helper";
 
 function Cart() {
   const { cartList } = useSelector((state) => state.cart);
@@ -31,7 +32,7 @@ function Cart() {
     if(cartList.length !== 0 ) {
       navigate('/checkout')
     } else {
-      alert('Nothing in your cart. Please add something!!!')
+      notification('Nothing in your cart. Please add something!!!')
       navigate('/')
     }
   }

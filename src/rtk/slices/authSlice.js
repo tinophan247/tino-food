@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import CryptoJS from "crypto-js";
+import { notification } from "../../utils/helper";
 
 export const register = createAsyncThunk("register", async (newUser) => {
   const res = await axios.post("http://localhost:4000/users", newUser);
@@ -62,7 +63,7 @@ const authSlice = createSlice({
       );
       // kiểm tra đăng nhập
       if (!user) {
-        alert("Tài khoản hoặc mật khẩu không đúng");
+        notification("Email or Password was wrong");
       } else {
         //mã hóa dữ liệu
         let token = createToken(user, "keycheck");
@@ -70,7 +71,7 @@ const authSlice = createSlice({
         localStorage.setItem("token", token);
         localStorage.setItem("userInfor", JSON.stringify(user));
         state.isLogin = true
-        alert("Đăng nhập thành công");
+        notification("Login Success");
       }
     });
     builder.addCase(login.rejected, (state) => {

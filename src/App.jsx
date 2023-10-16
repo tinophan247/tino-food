@@ -10,6 +10,7 @@ import Dessert from "./pages/Menu/Pizza/Dessert"
 import Drinks from "./pages/Menu/Pizza/Drinks"
 import Checkout from "./pages/Checkout/Checkout"
 import OrderTracking from "./pages/OrderTracking/OrderTracking"
+import OrderTrackingDetail from "./pages/OrderTracking/OrderTrackingDetail"
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
       </Route>
       <Route path="/checkout" element={<Checkout/>}/>
       <Route path="/order-tracking" element={<OrderTracking/>}/>
+      <Route path="/order-tracking-details/:id" element={<OrderTrackingDetail/>}/>
     </Routes>
     </>
   )
