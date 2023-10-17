@@ -11,6 +11,9 @@ import Drinks from "./pages/Menu/Pizza/Drinks"
 import Checkout from "./pages/Checkout/Checkout"
 import OrderTracking from "./pages/OrderTracking/OrderTracking"
 import OrderTrackingDetail from "./pages/OrderTracking/OrderTrackingDetail"
+import Dashboard from "./pages/AdminSite/Dashboard/Dashboard"
+import ProductManagement from "./pages/AdminSite/ProductManagement/ProductManagement"
+import UserManagement from "./pages/AdminSite/UserManagement/UserManagement"
 
 function App() {
   return (
@@ -29,7 +32,9 @@ function App() {
       <Route path="/checkout" element={<Checkout/>}/>
       <Route path="/order-tracking" element={<OrderTracking/>}/>
       <Route path="/order-tracking-details/:id" element={<OrderTrackingDetail/>}/>
-      <Route path="/order-tracking-details/:id" element={<OrderTrackingDetail/>}/>
+      <Route path="/dashboard" element={<Dashboard/>}/>
+      <Route path="/user-management" element={<UserManagement/>}/>
+      <Route path="/product-management" element={<ProductManagement/>}/>
     </Routes>
     </>
   )

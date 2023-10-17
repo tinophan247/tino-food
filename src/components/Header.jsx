@@ -3,6 +3,8 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { logout } from "../rtk/slices/authSlice";
 import { Avatar } from "@mui/material";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
+import AttributionIcon from "@mui/icons-material/Attribution";
+
 function Header() {
   const token = localStorage.getItem("token");
   const dispatch = useDispatch();
@@ -47,6 +49,11 @@ function Header() {
                     {cartList.length}
                   </p>
                 </Link>
+                {userInfor.isAdmin && (
+                  <Link to="/dashboard">
+                    <AttributionIcon />
+                  </Link>
+                )}
                 <button
                   onClick={handleLogout}
                   className="text-gray-800 border border-gray-300 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800"
