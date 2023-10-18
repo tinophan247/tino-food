@@ -6,9 +6,9 @@ function PageLayoutAdmin({ children }) {
   return (
     <div>
       <AdminHeader />
-      <div className="w-full flex">
+      <div className="w-full flex bg-gray-100 h-screen ">
         <LeftSidebar />
-        <div className="w-[85%] mt-20">{children}</div>
+        <div className="w-[80%] mt-20">{children}</div>
       </div>
     </div>
   );
