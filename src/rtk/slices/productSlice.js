@@ -6,6 +6,11 @@ export const getListProduct = createAsyncThunk("getListProduct", async () => {
   return res.data;
 });
 
+export const deleteProduct = createAsyncThunk("deleteProduct", async (productId) => {
+  const res = await axios.delete(`http://localhost:4000/products/${productId}`);
+  return res
+})
+
 const productSlice = createSlice({
   name: "product",
   initialState: {
@@ -49,6 +54,17 @@ const productSlice = createSlice({
       state.isLoading = false;
       state.isError = true;
       state.message = "Lỗi";
+    });
+    builder.addCase(deleteProduct.pending, (state) => {
+      state.isLoading = true;
+    });
+    builder.addCase(deleteProduct.fulfilled, (state) => {
+      state.isLoading = false;
+    });
+    builder.addCase(deleteProduct.rejected, (state) => {
+      state.isLoading = false;
+      state.isError = true;
+      state.message = "Error";
     });
   },
 });

@@ -9,8 +9,8 @@ import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { styled } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteUser, getListUser } from "../../../rtk/slices/authSlice";
 import { useEffect } from "react";
+import { deleteProduct, getListProduct } from "../../../rtk/slices/productSlice";
 import { notification } from "../../../utils/helper";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -33,17 +33,17 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-export default function UserTable() {
-  const { userData } = useSelector((state) => state.auth);
+export default function ProductTable() {
+  const { productList } = useSelector((state) => state.product);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getListUser());
+    dispatch(getListProduct());
   }, []);
 
-  const handleDelete = (userId) => {
-    dispatch(deleteUser(userId))     
-    notification('Delete User Success')
+  const handleDelete = (productId) => {
+    dispatch(deleteProduct(productId))     
+    notification('Delete Product Success')
     setTimeout(()=>{
       window.location.reload();
     },[1500])
@@ -51,41 +51,48 @@ export default function UserTable() {
 
   return (
     <TableContainer component={Paper}>
-      <Table
-        sx={{ minWidth: 700 }}
-        aria-label="customized table"
-      >
+      <Table sx={{ minWidth: 700 }} aria-label="customized table">
         <TableHead>
           <TableRow>
             <StyledTableCell align="left">ID</StyledTableCell>
-            <StyledTableCell align="left">Avatar</StyledTableCell>
-            <StyledTableCell align="left">First Name</StyledTableCell>
-            <StyledTableCell align="left">Last Name</StyledTableCell>
-            <StyledTableCell align="left">Email</StyledTableCell>
+            <StyledTableCell align="left">Image</StyledTableCell>
+            <StyledTableCell align="left">Name</StyledTableCell>
+            <StyledTableCell align="left">Description</StyledTableCell>
+            <StyledTableCell align="left">Price</StyledTableCell>
+            <StyledTableCell align="left">Size</StyledTableCell>
+            <StyledTableCell align="left">Category</StyledTableCell>
             <StyledTableCell align="left">Action</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {userData.length > 0 &&
-            userData.map((item) => (
+          {productList.length > 0 &&
+            productList.map((item) => (
               <StyledTableRow key={item.id}>
                 <StyledTableCell align="left">{item.id}</StyledTableCell>
                 <StyledTableCell align="left">
-                  <img
-                    className="w-20 rounded-full"
-                    src={item.avatar}
-                    alt="not-found"
-                  />
+                  <img className="w-20" src={item.img} alt="not-found" />
                 </StyledTableCell>
-                <StyledTableCell align="left">{item.firstname}</StyledTableCell>
-                <StyledTableCell align="left">{item.lastName}</StyledTableCell>
-                <StyledTableCell align="left">{item.email}</StyledTableCell>
+                <StyledTableCell align="left" className="w-1/2">
+                  {item.name}
+                </StyledTableCell>
+                <StyledTableCell
+                  className="w-1/2"
+                  title={item.description}
+                  align="left"
+                >
+                  <div className="flex items-center">
+                    <div className="truncate w-[300px]">{item.description}</div>
+                  </div>
+                </StyledTableCell>
+                <StyledTableCell align="left">${item.price}</StyledTableCell>
+                <StyledTableCell align="left">{item.size}</StyledTableCell>
+                <StyledTableCell align="left">{item.category}</StyledTableCell>
                 <StyledTableCell align="right">
                   <div className="flex gap-3">
                     <div className="w-10 h-10 bg-red-500 rounded flex justify-center items-center cursor-pointer">
                       <EditIcon className="text-white" />
                     </div>
-                    <div onClick={()=> handleDelete(item.id)} className="w-10 h-10 bg-red-700 rounded flex justify-center items-center cursor-pointer">
+                    <div onClick={()=>handleDelete(item.id)} className="w-10 h-10 bg-red-700 rounded flex justify-center items-center cursor-pointer">
                       <DeleteIcon className="text-white" />
                     </div>
                   </div>

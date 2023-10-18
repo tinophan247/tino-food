@@ -9,7 +9,7 @@ function Menu() {
           src="https://media.istockphoto.com/id/1253496654/vector/best-italian-pizza-banner-with-ribbon-tomato-cheese-mozzarella-flour-delicious-slices.jpg?s=170667a&w=0&k=20&c=G2RB0dr-4i3dAPx3EXjCi8ZOZ7_SPPl6wvaxvLakXOs="
           alt="not-found"
         />
-        <nav className="w-full bg-slate-300 h-10 flex justify-evenly items-center font-semibold sticky top-12 z-50">
+        <nav className="w-full bg-slate-300 h-10 flex justify-evenly items-center font-semibold sticky top-[60px] z-50">
           <NavLink
             to="pizza"
             className={({ isActive }) =>

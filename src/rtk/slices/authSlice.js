@@ -21,6 +21,11 @@ export const getListUser = createAsyncThunk("getListUser", async () => {
   return res.data
 })
 
+export const deleteUser = createAsyncThunk("deleteUser", async (userId) => {
+  const res = await axios.delete(`http://localhost:4000/users/${userId}`);
+  return res
+})
+
 function createToken(userObj, privateKey) {
   return CryptoJS.AES.encrypt(JSON.stringify(userObj), privateKey).toString();
 }
@@ -30,7 +35,6 @@ const authSlice = createSlice({
   initialState: {
     isLoading: false,
     userData: [],
-    isSuccess: false,
     isError: false,
     message: "",
     isLogin : false
@@ -47,13 +51,11 @@ const authSlice = createSlice({
     });
     builder.addCase(register.fulfilled, (state) => {
       state.isLoading = false;
-      state.isSuccess = true;
-      state.message = "Đăng ký thành công";
     });
     builder.addCase(register.rejected, (state) => {
       state.isLoading = false;
       state.isError = true;
-      state.message = "Lỗi";
+      state.message = "Error ";
     });
     builder.addCase(login.pending, (state) => {
       state.isLoading = true;
@@ -82,7 +84,7 @@ const authSlice = createSlice({
     builder.addCase(login.rejected, (state) => {
       state.isLoading = false;
       state.isError = true;
-      state.message = "Lỗi";
+      state.message = "Error";
     });
     builder.addCase(getListUser.pending, (state) => {
       state.isLoading = true;
@@ -94,7 +96,18 @@ const authSlice = createSlice({
     builder.addCase(getListUser.rejected, (state) => {
       state.isLoading = false;
       state.isError = true;
-      state.message = "Lỗi";
+      state.message = "Error";
+    });
+    builder.addCase(deleteUser.pending, (state) => {
+      state.isLoading = true;
+    });
+    builder.addCase(deleteUser.fulfilled, (state) => {
+      state.isLoading = false;
+    });
+    builder.addCase(deleteUser.rejected, (state) => {
+      state.isLoading = false;
+      state.isError = true;
+      state.message = "Error";
     });
   },
 });
