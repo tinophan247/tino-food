@@ -58,7 +58,7 @@ function Invoice() {
               <tbody>
                 {item.cart.map((i) => (
                   <tr key={i.id}>
-                    <td className="text-left text-gray-700">{i.name}</td>
+                    <td className="text-left text-gray-700">{i.name} (x {i.quantity})</td>
                     <td className="text-right text-gray-700">${i.price}</td>
                   </tr>
                 ))}
