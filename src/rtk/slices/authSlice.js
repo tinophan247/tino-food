@@ -4,12 +4,12 @@ import CryptoJS from "crypto-js";
 import { notification } from "../../utils/helper";
 
 export const register = createAsyncThunk("register", async (newUser) => {
-  const res = await axios.post("http://localhost:4000/users", newUser);
+  const res = await axios.post(import.meta.env.VITE_API_URL + `users`, newUser);
   return res;
 });
 
 export const login = createAsyncThunk("login", async (inforLogin) => {
-  const res = await axios.get("http://localhost:4000/users");
+  const res = await axios.get(import.meta.env.VITE_API_URL + "users");
   return {
     users: res.data,
     inforLogin: inforLogin,
@@ -17,12 +17,12 @@ export const login = createAsyncThunk("login", async (inforLogin) => {
 });
 
 export const getListUser = createAsyncThunk("getListUser", async () => {
-  const res = await axios.get("http://localhost:4000/users");
+  const res = await axios.get(import.meta.env.VITE_API_URL + `users`);
   return res.data
 })
 
 export const deleteUser = createAsyncThunk("deleteUser", async (userId) => {
-  const res = await axios.delete(`http://localhost:4000/users/${userId}`);
+  const res = await axios.delete(import.meta.env.VITE_API_URL + `users/` + userId);
   return res
 })
 

@@ -35,9 +35,11 @@ function OrderTracking() {
                       View Detail
                     </button>
                   </Link>
+                  <Link to={`/invoice/${item.id}`}>
                   <button className="w-28 h-10 bg-white border border-gray-300 rounded-md">
                     View Invoice
                   </button>
+                  </Link>
                 </div>
               </div>
               <div>

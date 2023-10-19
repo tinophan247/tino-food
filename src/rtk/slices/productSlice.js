@@ -2,12 +2,12 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export const getListProduct = createAsyncThunk("getListProduct", async () => {
-  const res = await axios.get("http://localhost:4000/products");
+  const res = await axios.get(import.meta.env.VITE_API_URL + "products");
   return res.data;
 });
 
 export const deleteProduct = createAsyncThunk("deleteProduct", async (productId) => {
-  const res = await axios.delete(`http://localhost:4000/products/${productId}`);
+  const res = await axios.delete(import.meta.env.VITE_API_URL + `products/` + productId);
   return res
 })
 

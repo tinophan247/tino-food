@@ -14,6 +14,7 @@ import OrderTrackingDetail from "./pages/OrderTracking/OrderTrackingDetail"
 import Dashboard from "./pages/AdminSite/Dashboard/Dashboard"
 import ProductManagement from "./pages/AdminSite/ProductManagement/ProductManagement"
 import UserManagement from "./pages/AdminSite/UserManagement/UserManagement"
+import Invoice from "./pages/Invoice/Invoice"
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
       <Route path="/dashboard" element={<Dashboard/>}/>
       <Route path="/user-management" element={<UserManagement/>}/>
       <Route path="/product-management" element={<ProductManagement/>}/>
+      <Route path="/invoice/:orderId" element={<Invoice/>}/>
     </Routes>
     </>
   )
