@@ -6,7 +6,7 @@
       "lastName": "Guest",
       "email": "marathon@gmail.com",
       "password": "123",
-      "isAdmin": false,
+      "isAdmin": true,
       "avatar": "https://hrchannels.com/Upload/avatar/20211021/162801972_ME.png"
     },
     {
@@ -17,6 +17,15 @@
       "password": "123",
       "isAdmin": true,
       "avatar": "https://static.vecteezy.com/system/resources/previews/023/413/966/original/cute-kawaii-pizza-chibi-mascot-cartoon-style-vector.jpg"
+    },
+    {
+      "id": 9625,
+      "firstname": "Cao",
+      "lastName": "Duong",
+      "email": "caohaiduong04@gmail.com",
+      "password": "123456",
+      "isAdmin": false,
+      "avatar": "https://t4.ftcdn.net/jpg/05/49/98/39/360_F_549983970_bRCkYfk0P6PP5fKbMhZMIb07mCJ6esXL.jpg"
     }
   ],
   "products": [
